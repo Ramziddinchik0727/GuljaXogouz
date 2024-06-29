@@ -8,7 +8,6 @@ async def main_menu(lang):
                 KeyboardButton(text=_('🍴 Menyu', locale=lang))
             ],
             [
-                KeyboardButton(text=_('✍️ Izoh Qoldirish', locale=lang)),
                 KeyboardButton(text=_('⚙️ Sozlamalar', locale=lang))
             ],
         ], resize_keyboard=True
