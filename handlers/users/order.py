@@ -26,9 +26,14 @@ async def in_basket_handler(message: types.Message, state: FSMContext):
                                  reply_markup=await main_menu(user['lang']))
             await state.set_state('in_start')
     elif message.text[0] == "🛒":
+        count = 0
+        for food in await basket_functions(work='GET'):
+            count += food['quantity'] * food['price']
         userga = _("‼️ Iltimos ushbu kartaga pul o'tkazing, va to'lov chekini yuboring.‼️", locale=user[4])
         userga += f"\n💳 8600 1234 5678 9012"
         userga += f"\n👤 Ramziddin Marufjonov"
+        userga += _(f"💰 Ja'mi: ", locale=user['lang'])
+        userga += count
         await message.answer(text=userga, reply_markup=await payment_btn(user[4]))
         await state.set_state('send_check')
 

@@ -33,6 +33,10 @@ msgstr ""
 msgid "🛒 Buyurtma berish"
 msgstr ""
 
+#: handlers/users/order.py:29
+msgid "‼️ Iltimos ushbu kartaga pul o'tkazing, va to'lov chekini yuboring.‼️"
+msgstr ""
+
 #: handlers/users/main_buttons.py:39 handlers/users/main_buttons.py:64
 msgid "💰 Ja'mi: "
 msgstr ""

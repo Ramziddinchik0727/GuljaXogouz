@@ -37,6 +37,10 @@ msgstr "🛒 Сделать заказ"
 msgid "💰 Ja'mi: "
 msgstr "💰 Общий: "
 
+#: handlers/users/order.py:29
+msgid "‼️ Iltimos ushbu kartaga pul o'tkazing, va to'lov chekini yuboring.‼️"
+msgstr "‼️ Пожалуйста, переведите деньги на эту карту и отправьте квитанцию о платеже.‼️"
+
 #: handlers/users/main_buttons.py:44 handlers/users/main_buttons.py:69
 msgid "😕 Kechirasiz sizning savatingiz bosh"
 msgstr "😕 Извините, ваша корзина пуста."

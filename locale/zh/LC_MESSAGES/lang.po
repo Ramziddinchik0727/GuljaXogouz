@@ -33,7 +33,9 @@ msgstr "🏘 主菜单"
 msgid "🛒 Buyurtma berish"
 msgstr "🛒 下订单"
 
-#: handlers/users/main
+#: handlers/users/order.py:29
+msgid "‼️ Iltimos ushbu kartaga pul o'tkazing, va to'lov chekini yuboring.‼️"
+msgstr "‼️ 请将款项转入此卡，并发送付款凭证。‼️"
 
 #: handlers/users/main_buttons.py:39 handlers/users/main_buttons.py:64
 msgid "💰 Ja'mi: "

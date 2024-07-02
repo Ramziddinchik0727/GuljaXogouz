@@ -37,6 +37,10 @@ msgstr "🛒 Place an order"
 msgid "💰 Ja'mi: "
 msgstr "💰 Total: "
 
+#: handlers/users/order.py:29
+msgid "‼️ Iltimos ushbu kartaga pul o'tkazing, va to'lov chekini yuboring.‼️"
+msgstr "‼️ Please transfer money to this card and send the payment receipt.‼️"
+
 #: handlers/users/main_buttons.py:44 handlers/users/main_buttons.py:69
 msgid "😕 Kechirasiz sizning savatingiz bosh"
 msgstr "😕 Sorry, your cart is empty"
