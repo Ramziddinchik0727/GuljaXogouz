@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-01 15:14+0500\n"
+"POT-Creation-Date: 2024-07-02 17:34+0500\n"
 "PO-Revision-Date: 2024-06-25 17:51+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh\n"
@@ -18,43 +18,44 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: handlers/users/main_buttons.py:27 handlers/users/main_buttons.py:52
+#: handlers/users/main_buttons.py:32 handlers/users/main_buttons.py:57
 msgid "😊 Savatingiz"
 msgstr "😊 Ваша корзина"
 
-#: handlers/users/main_buttons.py:30 handlers/users/main_buttons.py:55
-#: handlers/users/main_buttons.py:77 handlers/users/order.py:18
-#: keyboards/default/users_keyboards.py:67
+#: handlers/users/main_buttons.py:35 handlers/users/main_buttons.py:60
+#: handlers/users/main_buttons.py:82 handlers/users/order.py:19
+#: keyboards/default/users_keyboards.py:80
 msgid "🏘 Asosiy menyu"
 msgstr "🏘 Главное меню"
 
-#: handlers/users/main_buttons.py:31 handlers/users/main_buttons.py:56
-#: handlers/users/order.py:19
+#: handlers/users/main_buttons.py:36 handlers/users/main_buttons.py:61
+#: handlers/users/order.py:20
 msgid "🛒 Buyurtma berish"
 msgstr "🛒 Сделать заказ"
 
-#: handlers/users/main_buttons.py:39 handlers/users/main_buttons.py:64
+#: handlers/users/main_buttons.py:44 handlers/users/main_buttons.py:69
+#: handlers/users/order.py:35
 msgid "💰 Ja'mi: "
 msgstr "💰 Общий: "
 
-#: handlers/users/main_buttons.py:44 handlers/users/main_buttons.py:69
+#: handlers/users/main_buttons.py:49 handlers/users/main_buttons.py:74
 msgid "😕 Kechirasiz sizning savatingiz bosh"
 msgstr "😕 Извините, ваша корзина пуста."
 
-#: handlers/users/main_buttons.py:83 handlers/users/main_buttons.py:100
-#: handlers/users/menu.py:18 handlers/users/start.py:47
+#: handlers/users/main_buttons.py:88 handlers/users/menu.py:18
+#: handlers/users/menu.py:91 handlers/users/start.py:47
 #: handlers/users/start.py:69 keyboards/inline/inline_keyboards.py:34
 msgid "⬅️ Ortga"
 msgstr "⬅️ Назад"
 
-#: handlers/users/main_buttons.py:84 handlers/users/main_buttons.py:101
-#: handlers/users/menu.py:19 handlers/users/start.py:48
-#: handlers/users/start.py:70 keyboards/default/users_keyboards.py:68
+#: handlers/users/main_buttons.py:89 handlers/users/menu.py:19
+#: handlers/users/menu.py:92 handlers/users/start.py:48
+#: handlers/users/start.py:70 keyboards/default/users_keyboards.py:81
 #: keyboards/inline/inline_keyboards.py:31
 msgid "🛍 Savat"
 msgstr "🛍 Корзина"
 
-#: handlers/users/main_buttons.py:87
+#: handlers/users/main_buttons.py:92
 #, fuzzy
 msgid "😊 Bizning menyu"
 msgstr "😋 Наше меню"
@@ -71,7 +72,7 @@ msgstr "Еда"
 msgid "Taom narxi"
 msgstr "Цена еды"
 
-#: handlers/users/menu.py:74
+#: handlers/users/menu.py:76
 msgid ""
 "😕 Kechirasiz. Mahsulotni 1 taga kamaytirish uchun, mahsulot kamida 1 dona"
 " bolishi kerak!"
@@ -79,23 +80,29 @@ msgstr ""
 "😕Прости. Чтобы уменьшить произведение на 1, оно должно быть не менее 1 "
 "дюйма. должно быть!"
 
-#: handlers/users/menu.py:80
+#: handlers/users/menu.py:82
 msgid "✅ Mahsulot savatingizdan olib tashlandi."
 msgstr "✅ Товар удален из корзины."
 
-#: handlers/users/order.py:22 handlers/users/order.py:24
+#: handlers/users/order.py:23 handlers/users/order.py:25
 msgid "✅ Mahsulot savatingizdan muvaffaqqiyatli olib tashlandi."
 msgstr "✅ Товар удален из корзины."
 
-#: handlers/users/order.py:27
+#: handlers/users/order.py:32
+msgid "‼️ Iltimos ushbu kartaga pul o'tkazing, va to'lov chekini yuboring.‼️"
+msgstr ""
+"‼️ Пожалуйста, переведите деньги на эту карту и отправьте квитанцию о "
+"платеже.‼️"
+
+#: handlers/users/order.py:47
 msgid "📍 Yetkazib berish joylashuvini yuboring"
 msgstr "📍Укажите место доставки"
 
-#: handlers/users/order.py:63
+#: handlers/users/order.py:86
 msgid "✅ Buyurtmangiz qabul qilindi."
 msgstr "✅Ваш заказ принят."
 
-#: handlers/users/order.py:65
+#: handlers/users/order.py:88
 msgid "🆔 Buyurtma raqamingiz: "
 msgstr "🆔Номер вашего заказа: "
 
@@ -165,33 +172,38 @@ msgid "🍴 Menyu"
 msgstr "🍴 Меню"
 
 #: keyboards/default/users_keyboards.py:21
+msgid "💸 Naqd"
+msgstr ""
+
+#: keyboards/default/users_keyboards.py:25
+#: keyboards/default/users_keyboards.py:60
+#: keyboards/default/users_keyboards.py:70
+msgid "❌ Bekor qilish"
+msgstr "❌ Отмена"
+
+#: keyboards/default/users_keyboards.py:34
 msgid "👤 Ism Familyani O'zgartirish"
 msgstr "👤 Изменить имя Фамилию"
 
-#: keyboards/default/users_keyboards.py:22
+#: keyboards/default/users_keyboards.py:35
 msgid "📞 Telefon Raqamni O'zgartirish"
 msgstr "📞 Изменить номер телефона"
 
-#: keyboards/default/users_keyboards.py:25
+#: keyboards/default/users_keyboards.py:38
 msgid "🇺🇿 🔁 🇷🇺 Tilni O'zgartirish"
 msgstr "🇺🇿 🔁 🇷🇺 Изменить язык"
 
-#: keyboards/default/users_keyboards.py:26
+#: keyboards/default/users_keyboards.py:39
 msgid "🏘 Asosiy Menyu"
 msgstr "🏘 Главное меню"
 
-#: keyboards/default/users_keyboards.py:36
+#: keyboards/default/users_keyboards.py:49
 msgid "📞 Telefon Raqamni Yuborish"
 msgstr "📞 Отправить номер телефона"
 
-#: keyboards/default/users_keyboards.py:46
+#: keyboards/default/users_keyboards.py:59
 msgid "📍 Joylashuv yuborish"
 msgstr "📍 Отправить местоположение"
-
-#: keyboards/default/users_keyboards.py:47
-#: keyboards/default/users_keyboards.py:57
-msgid "❌ Bekor qilish"
-msgstr "❌ Отмена"
 
 #: venv/Lib/site-packages/click/_termui_impl.py:518
 msgid "{editor}: Editing failed"
