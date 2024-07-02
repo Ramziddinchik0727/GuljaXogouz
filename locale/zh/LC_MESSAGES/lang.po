@@ -33,6 +33,8 @@ msgstr "🏘 主菜单"
 msgid "🛒 Buyurtma berish"
 msgstr "🛒 下订单"
 
+#: handlers/users/main
+
 #: handlers/users/main_buttons.py:39 handlers/users/main_buttons.py:64
 msgid "💰 Ja'mi: "
 msgstr "💰 全部的："
