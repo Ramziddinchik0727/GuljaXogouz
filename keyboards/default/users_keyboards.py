@@ -14,6 +14,19 @@ async def main_menu(lang):
     )
     return main_menu
 
+async def payment_btn(lang):
+    payment_btn = ReplyKeyboardMarkup(
+        keyboard=[
+            [
+                KeyboardButton(text=_("💸 Naqd")),
+                KeyboardButton(text=f"💳 Kartaga to'lov")
+            ],
+            [
+                KeyboardButton(text=_(f"❌ Bekor qilish"))
+            ]
+        ], resize_keyboard=True
+    )
+    return payment_btn
 async def user_settings_menu(lang):
     settings = ReplyKeyboardMarkup(
         keyboard=[

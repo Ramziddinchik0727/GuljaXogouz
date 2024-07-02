@@ -19,7 +19,7 @@ languages = InlineKeyboardMarkup(
 )
 
 
-async def plus_minus(count, sum, food, price):
+async def plus_minus(count, sum, food, price, menu=None):
     plus_minus_quantity = InlineKeyboardMarkup(
         inline_keyboard=[
             [
@@ -29,6 +29,9 @@ async def plus_minus(count, sum, food, price):
             ],
             [
                 InlineKeyboardButton(text=_('🛍 Savat'), callback_data=f'basket')
+            ],
+            [
+                InlineKeyboardButton(text=_('⬅️ Ortga'), callback_data=f'back_to_menu_{menu}')
             ]
         ]
     )

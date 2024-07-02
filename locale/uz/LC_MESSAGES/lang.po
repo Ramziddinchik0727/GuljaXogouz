@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-06-27 00:38+0500\n"
+"POT-Creation-Date: 2024-07-01 15:14+0500\n"
 "PO-Revision-Date: 2024-06-26 12:15+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uz\n"
@@ -18,42 +18,44 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: handlers/users/main_buttons.py:55 handlers/users/main_buttons.py:80
-#: handlers/users/main_buttons.py:105 handlers/users/main_buttons.py:130
-#: handlers/users/main_buttons.py:155
+#: handlers/users/main_buttons.py:27 handlers/users/main_buttons.py:52
 msgid "😊 Savatingiz"
 msgstr ""
 
-#: handlers/users/main_buttons.py:58 handlers/users/main_buttons.py:83
-#: handlers/users/main_buttons.py:108 handlers/users/main_buttons.py:133
-#: handlers/users/main_buttons.py:158 handlers/users/menu.py:18
-#: handlers/users/order.py:18 handlers/users/start.py:47
-#: handlers/users/start.py:69 keyboards/default/users_keyboards.py:68
+#: handlers/users/main_buttons.py:30 handlers/users/main_buttons.py:55
+#: handlers/users/main_buttons.py:77 handlers/users/order.py:18
+#: keyboards/default/users_keyboards.py:67
 msgid "🏘 Asosiy menyu"
 msgstr ""
 
-#: handlers/users/main_buttons.py:59 handlers/users/main_buttons.py:84
-#: handlers/users/main_buttons.py:109 handlers/users/main_buttons.py:134
-#: handlers/users/main_buttons.py:159 handlers/users/order.py:19
+#: handlers/users/main_buttons.py:31 handlers/users/main_buttons.py:56
+#: handlers/users/order.py:19
 msgid "🛒 Buyurtma berish"
 msgstr ""
 
-#: handlers/users/main_buttons.py:67 handlers/users/main_buttons.py:92
-#: handlers/users/main_buttons.py:117 handlers/users/main_buttons.py:142
-#: handlers/users/main_buttons.py:167
+#: handlers/users/main_buttons.py:39 handlers/users/main_buttons.py:64
 msgid "💰 Ja'mi: "
 msgstr ""
 
-#: handlers/users/main_buttons.py:72 handlers/users/main_buttons.py:97
-#: handlers/users/main_buttons.py:122 handlers/users/main_buttons.py:147
-#: handlers/users/main_buttons.py:172
+#: handlers/users/main_buttons.py:44 handlers/users/main_buttons.py:69
 msgid "😕 Kechirasiz sizning savatingiz bosh"
 msgstr ""
 
+#: handlers/users/main_buttons.py:83 handlers/users/main_buttons.py:100
+#: handlers/users/menu.py:18 handlers/users/start.py:47
+#: handlers/users/start.py:69 keyboards/inline/inline_keyboards.py:34
+msgid "⬅️ Ortga"
+msgstr ""
+
+#: handlers/users/main_buttons.py:84 handlers/users/main_buttons.py:101
 #: handlers/users/menu.py:19 handlers/users/start.py:48
-#: handlers/users/start.py:70 keyboards/default/users_keyboards.py:69
+#: handlers/users/start.py:70 keyboards/default/users_keyboards.py:68
 #: keyboards/inline/inline_keyboards.py:31
 msgid "🛍 Savat"
+msgstr ""
+
+#: handlers/users/main_buttons.py:87
+msgid "😊 Bizning menyu"
 msgstr ""
 
 #: handlers/users/menu.py:36
@@ -86,16 +88,16 @@ msgstr ""
 msgid "📍 Yetkazib berish joylashuvini yuboring"
 msgstr ""
 
-#: handlers/users/order.py:61
+#: handlers/users/order.py:63
 msgid "✅ Buyurtmangiz qabul qilindi."
 msgstr ""
 
-#: handlers/users/order.py:63
+#: handlers/users/order.py:65
 msgid "🆔 Buyurtma raqamingiz: "
 msgstr ""
 
 #: handlers/users/register.py:14
-msgid "🇺🇿 Uzbek tili tanlandi. Iltimos ismingizni kiriting."
+msgid "🇺🇿 Uz1bek tili tanlandi. Iltimos ismingizni kiriting."
 msgstr ""
 
 #: handlers/users/register.py:27
@@ -122,7 +124,7 @@ msgstr ""
 msgid "😊 Izohingizni yozing"
 msgstr ""
 
-#: handlers/users/start.py:59 keyboards/default/users_keyboards.py:12
+#: handlers/users/start.py:59 keyboards/default/users_keyboards.py:11
 msgid "⚙️ Sozlamalar"
 msgstr ""
 
@@ -158,36 +160,32 @@ msgstr ""
 msgid "🍴 Menyu"
 msgstr ""
 
-#: keyboards/default/users_keyboards.py:11
-msgid "✍️ Izoh Qoldirish"
-msgstr ""
-
-#: keyboards/default/users_keyboards.py:22
+#: keyboards/default/users_keyboards.py:21
 msgid "👤 Ism Familyani O'zgartirish"
 msgstr ""
 
-#: keyboards/default/users_keyboards.py:23
+#: keyboards/default/users_keyboards.py:22
 msgid "📞 Telefon Raqamni O'zgartirish"
 msgstr ""
 
-#: keyboards/default/users_keyboards.py:26
+#: keyboards/default/users_keyboards.py:25
 msgid "🇺🇿 🔁 🇷🇺 Tilni O'zgartirish"
 msgstr ""
 
-#: keyboards/default/users_keyboards.py:27
+#: keyboards/default/users_keyboards.py:26
 msgid "🏘 Asosiy Menyu"
 msgstr ""
 
-#: keyboards/default/users_keyboards.py:37
+#: keyboards/default/users_keyboards.py:36
 msgid "📞 Telefon Raqamni Yuborish"
 msgstr ""
 
-#: keyboards/default/users_keyboards.py:47
+#: keyboards/default/users_keyboards.py:46
 msgid "📍 Joylashuv yuborish"
 msgstr ""
 
-#: keyboards/default/users_keyboards.py:48
-#: keyboards/default/users_keyboards.py:58
+#: keyboards/default/users_keyboards.py:47
+#: keyboards/default/users_keyboards.py:57
 msgid "❌ Bekor qilish"
 msgstr ""
 
@@ -450,4 +448,206 @@ msgid "{len_type} values are required, but {len_value} was given."
 msgid_plural "{len_type} values are required, but {len_value} were given."
 msgstr[0] ""
 msgstr[1] ""
+
+#~ msgid "🇺🇿 Uzbek tili tanlandi. Iltimos ismingizni kiriting."
+#~ msgstr ""
+
+#~ msgid "✍️ Izoh Qoldirish"
+#~ msgstr ""
+
+#~ msgid "{editor}: Editing failed"
+#~ msgstr ""
+
+#~ msgid "{editor}: Editing failed: {e}"
+#~ msgstr ""
+
+#~ msgid "Aborted!"
+#~ msgstr ""
+
+#~ msgid "Show this message and exit."
+#~ msgstr ""
+
+#~ msgid "(Deprecated) {text}"
+#~ msgstr ""
+
+#~ msgid "Options"
+#~ msgstr ""
+
+#~ msgid "Got unexpected extra argument ({args})"
+#~ msgid_plural "Got unexpected extra arguments ({args})"
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+
+#~ msgid "DeprecationWarning: The command {name!r} is deprecated."
+#~ msgstr ""
+
+#~ msgid "Commands"
+#~ msgstr ""
+
+#~ msgid "Missing command."
+#~ msgstr ""
+
+#~ msgid "No such command {name!r}."
+#~ msgstr ""
+
+#~ msgid "Value must be an iterable."
+#~ msgstr ""
+
+#~ msgid "Takes {nargs} values but 1 was given."
+#~ msgid_plural "Takes {nargs} values but {len} were given."
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+
+#~ msgid "env var: {var}"
+#~ msgstr ""
+
+#~ msgid "(dynamic)"
+#~ msgstr ""
+
+#~ msgid "default: {default}"
+#~ msgstr ""
+
+#~ msgid "required"
+#~ msgstr ""
+
+#~ msgid "%(prog)s, version %(version)s"
+#~ msgstr ""
+
+#~ msgid "Show the version and exit."
+#~ msgstr ""
+
+#~ msgid "Error: {message}"
+#~ msgstr ""
+
+#~ msgid "Try '{command} {option}' for help."
+#~ msgstr ""
+
+#~ msgid "Invalid value: {message}"
+#~ msgstr ""
+
+#~ msgid "Invalid value for {param_hint}: {message}"
+#~ msgstr ""
+
+#~ msgid "Missing argument"
+#~ msgstr ""
+
+#~ msgid "Missing option"
+#~ msgstr ""
+
+#~ msgid "Missing parameter"
+#~ msgstr ""
+
+#~ msgid "Missing {param_type}"
+#~ msgstr ""
+
+#~ msgid "Missing parameter: {param_name}"
+#~ msgstr ""
+
+#~ msgid "No such option: {name}"
+#~ msgstr ""
+
+#~ msgid "Did you mean {possibility}?"
+#~ msgid_plural "(Possible options: {possibilities})"
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+
+#~ msgid "unknown error"
+#~ msgstr ""
+
+#~ msgid "Could not open file {filename!r}: {message}"
+#~ msgstr ""
+
+#~ msgid "Argument {name!r} takes {nargs} values."
+#~ msgstr ""
+
+#~ msgid "Option {name!r} does not take a value."
+#~ msgstr ""
+
+#~ msgid "Option {name!r} requires an argument."
+#~ msgid_plural "Option {name!r} requires {nargs} arguments."
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+
+#~ msgid "Shell completion is not supported for Bash versions older than 4.4."
+#~ msgstr ""
+
+#~ msgid "Couldn't detect Bash version, shell completion is not supported."
+#~ msgstr ""
+
+#~ msgid "Repeat for confirmation"
+#~ msgstr ""
+
+#~ msgid "Error: The value you entered was invalid."
+#~ msgstr ""
+
+#~ msgid "Error: {e.message}"
+#~ msgstr ""
+
+#~ msgid "Error: The two entered values do not match."
+#~ msgstr ""
+
+#~ msgid "Error: invalid input"
+#~ msgstr ""
+
+#~ msgid "Press any key to continue..."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Choose from:\n"
+#~ "\t{choices}"
+#~ msgstr ""
+
+#~ msgid "{value!r} is not {choice}."
+#~ msgid_plural "{value!r} is not one of {choices}."
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+
+#~ msgid "{value!r} does not match the format {format}."
+#~ msgid_plural "{value!r} does not match the formats {formats}."
+#~ msgstr[0] ""
+#~ msgstr[1] ""
+
+#~ msgid "{value!r} is not a valid {number_type}."
+#~ msgstr ""
+
+#~ msgid "{value} is not in the range {range}."
+#~ msgstr ""
+
+#~ msgid "{value!r} is not a valid boolean."
+#~ msgstr ""
+
+#~ msgid "{value!r} is not a valid UUID."
+#~ msgstr ""
+
+#~ msgid "file"
+#~ msgstr ""
+
+#~ msgid "directory"
+#~ msgstr ""
+
+#~ msgid "path"
+#~ msgstr ""
+
+#~ msgid "{name} {filename!r} does not exist."
+#~ msgstr ""
+
+#~ msgid "{name} {filename!r} is a file."
+#~ msgstr ""
+
+#~ msgid "{name} '{filename}' is a directory."
+#~ msgstr ""
+
+#~ msgid "{name} {filename!r} is not readable."
+#~ msgstr ""
+
+#~ msgid "{name} {filename!r} is not writable."
+#~ msgstr ""
+
+#~ msgid "{name} {filename!r} is not executable."
+#~ msgstr ""
+
+#~ msgid "{len_type} values are required, but {len_value} was given."
+#~ msgid_plural "{len_type} values are required, but {len_value} were given."
+#~ msgstr[0] ""
+#~ msgstr[1] ""
 

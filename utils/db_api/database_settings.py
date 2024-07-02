@@ -33,6 +33,10 @@ async def user_settings(lang=None, work=None, full_name=None, phone_number=None,
     elif work == 'GET':
         return await database.fetch_all(query=users.select())
 
+async def payment_functions(work=None):
+    if work == f"GET":
+        return await database.fetch_all(query=payemnts.select())
+
 async def menu_functions(lang=None, work=None, menu_name=None, name=None, data: dict = None, ):
     if work is None:
         return await database.fetch_all(query=menu.select().where(menu.c.lang == lang).order_by(menu.c.id))

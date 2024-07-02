@@ -2,10 +2,11 @@ import random
 from aiogram.dispatcher import FSMContext
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
-from keyboards.default.users_keyboards import main_menu, my_locations
+from keyboards.default.users_keyboards import main_menu, my_locations, payment_btn
 from loader import dp, types, _
-from utils.db_api.database_settings import basket_functions, get_user, get_admins, menu_functions
+from utils.db_api.database_settings import basket_functions, get_user, get_admins, menu_functions, payment_functions
 from data.config import env
+
 
 @dp.message_handler(state='in_basket')
 async def in_basket_handler(message: types.Message, state: FSMContext):
@@ -21,11 +22,26 @@ async def in_basket_handler(message: types.Message, state: FSMContext):
                 basket.add(KeyboardButton(text=f"❌ {food['product']}"))
             await message.answer(_(f"✅ Mahsulot savatingizdan muvaffaqqiyatli olib tashlandi."), reply_markup=basket)
         else:
-            await message.answer(_(f"✅ Mahsulot savatingizdan muvaffaqqiyatli olib tashlandi."), reply_markup=await main_menu(user['lang']))
+            await message.answer(_(f"✅ Mahsulot savatingizdan muvaffaqqiyatli olib tashlandi."),
+                                 reply_markup=await main_menu(user['lang']))
             await state.set_state('in_start')
     elif message.text[0] == "🛒":
-        await message.answer(text=_(f"📍 Yetkazib berish joylashuvini yuboring"), reply_markup=await my_locations(user[4]))
-        await state.set_state('send_or_select_location')
+        userga = _("‼️ Iltimos ushbu kartaga pul o'tkazing, va to'lov chekini yuboring.‼️", locale=user[4])
+        userga += f"💳 8600 1234 5678 9012"
+        userga += f"👤 Ramziddin Marufjonov"
+        await message.answer(text=userga, reply_markup=await payment_btn(user[4]))
+        await state.set_state('send_check')
+
+
+@dp.message_handler(state='send_check', content_types=types.ContentTypes.PHOTO)
+async def send_payment_method_handler(message: types.Message, state: FSMContext):
+    await state.update_data({
+        'check': message.photo[-1].file_id
+    })
+    user = await get_user(message.chat.id)
+    await message.answer(text=_(f"📍 Yetkazib berish joylashuvini yuboring", locale=user[4]))
+    await state.set_state('send_or_select_location')
+
 
 @dp.message_handler(state='send_or_select_location', content_types=types.ContentType.LOCATION)
 async def send_or_select_location_handler(message: types.Message, state: FSMContext):
@@ -33,6 +49,7 @@ async def send_or_select_location_handler(message: types.Message, state: FSMCont
         'latitude': message.location.latitude,
         'longitude': message.location.longitude
     })
+    data = await state.get_data()
     user = await get_user(chat_id=message.chat.id)
     adminga = f"🛍 Yangi buyurtma:\n\n"
     adminga += f"👤 Toliq ism: {user['full_name']}\n"
@@ -57,8 +74,9 @@ async def send_or_select_location_handler(message: types.Message, state: FSMCont
         count += basket['quantity'] * basket['price']
         adminga += f"<b>{food['name']}</b> \t | \t <b>{basket['quantity']}</b> \t | \t <b> {basket['quantity']}  * {basket['price']} = {basket['quantity'] * basket['price']}</b>\n"
     adminga += f"\n💰 Ja'mi: {count} so'm"
-    await dp.bot.send_location(chat_id=env.str('GROUP_ID'), latitude=message.location.latitude, longitude=message.location.longitude)
-    await dp.bot.send_message(chat_id=env.str('GROUP_ID'), text=adminga)
+    await dp.bot.send_location(chat_id=env.str('GROUP_ID'), latitude=message.location.latitude,
+                               longitude=message.location.longitude)
+    await dp.bot.send_photo(chat_id=env.str('GROUP_ID'), caption=adminga, photo=data['photo'])
     await basket_functions(chat_id=message.chat.id, work='DELETE_BASKET')
     usergaa = _(f"✅ Buyurtmangiz qabul qilindi.", locale=user['lang'])
     usergaa += "\n"

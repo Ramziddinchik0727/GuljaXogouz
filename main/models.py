@@ -35,6 +35,22 @@ foods = sqlalchemy.Table(
     sqlalchemy.Column('lang', sqlalchemy.String)
 )
 
+payemnts = sqlalchemy.Table(
+    "payments",
+    metadata,
+    sqlalchemy.Column("id", sqlalchemy.Integer, primary_key=True),
+    sqlalchemy.Column("name", sqlalchemy.String),
+    sqlalchemy.Column("lang", sqlalchemy.String),
+)
+
+cards = sqlalchemy.Table(
+    "cards",
+    metadata,
+    sqlalchemy.Column("id", sqlalchemy.Integer, primary_key=True),
+    sqlalchemy.Column('card_number', sqlalchemy.String),
+    sqlalchemy.Column('card_holder', sqlalchemy.String),
+)
+
 filials = sqlalchemy.Table(
     'filials',
     metadata,
