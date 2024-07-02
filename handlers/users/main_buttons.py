@@ -1,17 +1,21 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
+from keyboards.default.admin_keyboards import admins_panel
 from keyboards.default.users_keyboards import main_menu
 from loader import dp, types, _
 from aiogram.dispatcher import FSMContext
 
-from utils.db_api.database_settings import basket_functions, get_user, menu_functions
+from utils.db_api.database_settings import basket_functions, get_user, menu_functions, is_admin
 
 
 @dp.message_handler(state='*', text=[f"🏘 Asosiy menyu", "🏘 主菜单", "🏘 Main menu", '🏘 Главное меню'])
 async def back_main_menu(message: types.Message, state: FSMContext):
-    user = await get_user(message.chat.id)
-    await message.answer(message.text, reply_markup=await main_menu(lang=user[4]))
-    await state.set_state('in_start')
+    if await is_admin(message.chat.id):
+        await message.answer(text=message.text, reply_markup=admins_panel)
+    else:
+        user = await get_user(message.chat.id)
+        await message.answer(message.text, reply_markup=await main_menu(lang=user[4]))
+        await state.set_state('in_start')
 
 @dp.message_handler(state='*', text=[f"❌ Отмена", f"❌ Cancel", f"❌ 取消", "❌ Bekor Qilish"])
 async def cancel_handler(message: types.Message, state: FSMContext):
