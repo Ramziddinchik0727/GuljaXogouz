@@ -12,6 +12,7 @@ from utils.db_api.database_settings import basket_functions, get_user, menu_func
 async def back_main_menu(message: types.Message, state: FSMContext):
     if await is_admin(message.chat.id):
         await message.answer(text=message.text, reply_markup=admins_panel)
+        await state.finish()
     else:
         user = await get_user(message.chat.id)
         await message.answer(message.text, reply_markup=await main_menu(lang=user[4]))
