@@ -44,7 +44,7 @@ async def in_start_handler(message: types.Message, state: FSMContext):
     user = await get_user(message.chat.id)
     if message.text[0] == "🍴":
         menu = ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
-        menu.insert(KeyboardButton(text=_(f"🏘 Asosiy menyu")))
+        menu.insert(KeyboardButton(text=_(f"⬅️ Ortga")))
         menu.insert(KeyboardButton(text=_(f"🛍 Savat")))
         userga = _('😋 Bizning menyu', locale=user[4])
         menu_ = await menu_functions(lang=user['lang'])
@@ -66,7 +66,7 @@ async def menu(message: types.Message, state: FSMContext):
     })
     user = await get_user(message.from_user.id)
     menu = ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
-    menu.insert(KeyboardButton(text=_(f"🏘 Asosiy menyu")))
+    menu.insert(KeyboardButton(text=_(f"⬅️ Ortga")))
     menu.insert(KeyboardButton(text=_(f"🛍 Savat")))
     userga = _('😋 Bizning menyu', locale=user['lang'])
     menu_ = await menu_functions(lang=user['lang'])
