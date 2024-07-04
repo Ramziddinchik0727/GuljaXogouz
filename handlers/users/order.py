@@ -2,7 +2,7 @@ import random
 from aiogram.dispatcher import FSMContext
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
-from keyboards.default.users_keyboards import main_menu, my_locations, payment_btn
+from keyboards.default.users_keyboards import main_menu, my_locations, payment_btn, cancel
 from loader import dp, types, _
 from utils.db_api.database_settings import basket_functions, get_user, get_admins, menu_functions, payment_functions
 from data.config import env
@@ -34,7 +34,7 @@ async def in_basket_handler(message: types.Message, state: FSMContext):
         userga += f"\n👤 Ramziddin Marufjonov\n"
         userga += _(f"💰 Ja'mi: ", locale=user['lang'])
         userga += str(count)
-        await message.answer(text=userga, reply_markup=await payment_btn(user[4]))
+        await message.answer(text=userga, reply_markup=await cancel(user[4]))
         await state.set_state('send_check')
 
 
