@@ -27,7 +27,7 @@ async def in_basket_handler(message: types.Message, state: FSMContext):
             await state.set_state('in_start')
     elif message.text[0] == "🛒":
         count = 0
-        for food in await basket_functions(work='GET'):
+        for food in await basket_functions(work='GET', chat_id=message.chat.id):
             count += food['quantity'] * food['price']
         userga = _("‼️ Iltimos ushbu kartaga pul o'tkazing, va to'lov chekini yuboring.‼️", locale=user[4])
         userga += f"\n💳 8600 1234 5678 9012"
