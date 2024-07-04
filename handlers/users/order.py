@@ -33,7 +33,7 @@ async def in_basket_handler(message: types.Message, state: FSMContext):
         userga += f"\n💳 8600 1234 5678 9012"
         userga += f"\n👤 Ramziddin Marufjonov"
         userga += _(f"💰 Ja'mi: ", locale=user['lang'])
-        userga += count
+        userga += str(count)
         await message.answer(text=userga, reply_markup=await payment_btn(user[4]))
         await state.set_state('send_check')
 
