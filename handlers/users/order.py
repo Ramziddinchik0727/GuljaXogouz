@@ -41,7 +41,7 @@ async def in_basket_handler(message: types.Message, state: FSMContext):
 @dp.message_handler(state='send_check', content_types=types.ContentTypes.PHOTO)
 async def send_payment_method_handler(message: types.Message, state: FSMContext):
     await state.update_data({
-        'check': message.photo[-1].file_id
+        'photo': message.photo[-1].file_id
     })
     user = await get_user(message.chat.id)
     await message.answer(text=_(f"📍 Yetkazib berish joylashuvini yuboring", locale=user[4]))
