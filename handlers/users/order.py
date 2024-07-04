@@ -44,7 +44,7 @@ async def send_payment_method_handler(message: types.Message, state: FSMContext)
         'photo': message.photo[-1].file_id
     })
     user = await get_user(message.chat.id)
-    await message.answer(text=_(f"📍 Yetkazib berish joylashuvini yuboring", locale=user[4]))
+    await message.answer(text=_(f"📍 Yetkazib berish joylashuvini yuboring", locale=user[4]), reply_markup=await my_locations(user['lang']))
     await state.set_state('send_or_select_location')
 
 
