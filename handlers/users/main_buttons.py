@@ -79,8 +79,13 @@ async def back_menu_handler(message: types.Message, state: FSMContext):
     now_state = await state.get_state()
     user = await get_user(message.chat.id)
     if now_state == 'get_food':
-        await message.answer(text=_(f"🏘 Asosiy menyu", locale=user['lang']), reply_markup=await main_menu(user['lang']))
-        await state.set_state('in_start')
+        if await is_admin(message.chat.id):
+            await message.answer(text=message.text, reply_markup=admins_panel)
+            await state.finish()
+        else:
+            await message.answer(text=_(f"🏘 Asosiy menyu", locale=user['lang']),
+                                 reply_markup=await main_menu(user['lang']))
+            await state.set_state('in_start')
     elif now_state == 'in_food':
         menu = await state.get_data()
         all_menu = await menu_functions(lang=user[4])
