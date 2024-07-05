@@ -119,9 +119,9 @@ async def basket_functions(lang=None, work=None, name=None, chat_id=None, price=
     elif work == 'DELETE_BASKET':
         return await database.execute(query=basket.delete().where(basket.c.chat_id == chat_id))
     elif work == 'DELETE_FOR': # This function also removes the food removed through the admin panel from the cart.
-        food1 = await database.fetch_one(query=foods.select().where(basket.c.name == translate_uz_to_ru(text=name)))
-        food2 = await database.fetch_one(query=foods.select().where(basket.c.name == translate_uz_to_en(text=name)))
-        food3 = await database.fetch_one(query=foods.select().where(basket.c.name == translate_uz_to_zh(text=name)))
+        food1 = await database.fetch_one(query=foods.select().where(basket.c.product == translate_uz_to_ru(text=name)))
+        food2 = await database.fetch_one(query=foods.select().where(basket.c.product == translate_uz_to_en(text=name)))
+        food3 = await database.fetch_one(query=foods.select().where(basket.c.product == translate_uz_to_zh(text=name)))
         await database.execute(query=basket.delete().where(basket.c.product == food1['name']))
         await database.execute(query=basket.delete().where(basket.c.product == food2['name']))
         await database.execute(query=basket.delete().where(basket.c.product == food3['name']))
