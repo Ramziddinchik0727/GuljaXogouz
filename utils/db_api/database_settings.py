@@ -57,7 +57,7 @@ async def menu_functions(lang=None, work=None, menu_name=None, name=None, data: 
     elif work == 'ADD_MENU':
         await database.execute(query=menu.insert().values(name=data['name'], lang='uz', name_to_get=data['name']))
         await database.execute(query=menu.insert().values(name=translate_uz_to_ru(text=data['name']), lang='ru', name_to_get=data['name']))
-        await database.execute(query=menu.insert().values(name=translate_uz_to_en(text=data['name']), lang='en', name_to_get=data['name']))
+        await database.execute(query=menu.insert().values(namenume=translate_uz_to_en(text=data['name']), lang='en', name_to_get=data['name']))
         await database.execute(query=menu.insert().values(name=translate_uz_to_zh(text=data['name']), lang='zh', name_to_get=data['name']))
         return True
     elif work == 'DELETE':
