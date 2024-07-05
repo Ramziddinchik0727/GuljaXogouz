@@ -78,6 +78,7 @@ async def send_or_select_location_handler(message: types.Message, state: FSMCont
         food = await menu_functions(work='GET_FOR', name=basket['product'])
         count += basket['quantity'] * basket['price']
         adminga += f"<b>{food['name']}</b> \t | \t <b>{basket['quantity']}</b> \t | \t <b> {basket['quantity']}  * {basket['price']} = {basket['quantity'] * basket['price']}</b>\n"
+    await basket_functions(work='DELETE_BASKET')
     adminga += f"\n💰 Ja'mi: {count} so'm"
     await dp.bot.send_location(chat_id=env.str('GROUP_ID'), latitude=message.location.latitude,
                                longitude=message.location.longitude)
