@@ -21,8 +21,12 @@ async def back_main_menu(message: types.Message, state: FSMContext):
 @dp.message_handler(state='*', text=[f"❌ Отмена", f"❌ Cancel", f"❌ 取消", "❌ Bekor qilish"])
 async def cancel_handler(message: types.Message, state: FSMContext):
     user = await get_user(message.chat.id)
-    await message.answer(text=message.text, reply_markup=await main_menu(lang=user[4]))
-    await state.set_state('in_start')
+    if await is_admin(message.chat.id):
+        await message.answer(text=message.text, reply_markup=admins_panel)
+        await state.finish()
+    else:
+        await message.answer(text=message.text, reply_markup=await main_menu(lang=user[4]))
+        await state.set_state('in_start')
 
 @dp.message_handler(state='*', text=[f"🛍 Корзина", f"🛍 Savat", f"🛍 Cart"])
 async def show_basket_handler(message: types.Message, state: FSMContext):
