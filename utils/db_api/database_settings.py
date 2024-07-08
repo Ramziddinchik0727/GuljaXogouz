@@ -56,9 +56,15 @@ async def menu_functions(lang=None, work=None, menu_name=None, name=None, data: 
         return await database.fetch_one(query=foods.select().where(foods.c.lang == 'uz', foods.c.photo == food['photo']))
     elif work == 'ADD_MENU':
         await database.execute(query=menu.insert().values(name=data['name'], lang='uz', name_to_get=data['name']))
+<<<<<<< HEAD
         await database.execute(query=menu.insert().values(name=translate_uz_to_ru(text=data['name']), lang='ru', name_to_get=data['name']))
         await database.execute(query=menu.insert().values(namenume=translate_uz_to_en(text=data['name']), lang='en', name_to_get=data['name']))
         await database.execute(query=menu.insert().values(name=translate_uz_to_zh(text=data['name']), lang='zh', name_to_get=data['name']))
+=======
+        await database.execute(query=menu.insert().values(name=translate_uz_to_ru(text=data['name']), lang='ru'), name_to_get=data['name'])
+        await database.execute(query=menu.insert().values(name=translate_uz_to_en(text=data['name']), lang='en',), name_to_get=data['name'])
+        await database.execute(query=menu.insert().values(name=translate_uz_to_zh(text=data['name']), lang='zh', ), name_to_get=data['name'])
+>>>>>>> cd61e59b094bc37ff049c22fb8fed6e3bb84c71c
         return True
     elif work == 'DELETE':
         food = await database.fetch_one(query=foods.select().where(foods.c.name == data['name'], foods.c.menu == data['menu'], foods.c.lang=='uz'))
