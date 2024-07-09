@@ -8,12 +8,12 @@ from utils.db_api.database_settings import add_user
 
 @dp.callback_query_handler(state=RegisterState.get_lang)
 async def register_lang(call: types.CallbackQuery, state: FSMContext):
+    lang = call.data
     await state.update_data({
-        'lang': call.data
+        'lang': lang
     })
-    userga = _('Uzbek tili tanlandi. Iltimos ismingizni kiriting.', locale=call.data)
     await call.message.delete()
-    await call.message.answer(text=userga)
+    await call.message.answer(text=_('🇺🇿 Uzbek tili tanlandi. Iltimos ismingizni kiriting.', locale=lang))
     await RegisterState.full_name.set()
 
 

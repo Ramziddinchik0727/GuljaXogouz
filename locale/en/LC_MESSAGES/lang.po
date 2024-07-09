@@ -7,11 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2024-07-09 11:41+0000\n"
-=======
-"POT-Creation-Date: 2024-07-09 16:17+0500\n"
->>>>>>> 5c5c6ce3f18da170e592bdaa1ace9ec59472dc61
+"POT-Creation-Date: 2024-07-09 21:34+0500\n"
 "PO-Revision-Date: 2024-06-26 12:15+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -106,9 +102,8 @@ msgstr "✅ Your order has been received"
 msgid "🆔 Buyurtma raqamingiz: "
 msgstr "🆔 Your order number"
 
-#: handlers/users/register.py:14
-#, fuzzy
-msgid "Uzbek tili tanlandi. Iltimos ismingizni kiriting."
+#: handlers/users/register.py:16
+msgid "🇺🇿 Uzbek tili tanlandi. Iltimos ismingizni kiriting."
 msgstr "🇺🇸 English language selected. Please enter your name"
 
 #: handlers/users/register.py:27
@@ -205,7 +200,6 @@ msgstr "📞 Send phone number"
 msgid "📍 Joylashuv yuborish"
 msgstr "📍 Send location"
 
-<<<<<<< HEAD
 #: venv/lib/python3.10/site-packages/click/_termui_impl.py:518
 msgid "{editor}: Editing failed"
 msgstr ""
@@ -466,8 +460,6 @@ msgid_plural "{len_type} values are required, but {len_value} were given."
 msgstr[0] ""
 msgstr[1] ""
 
-=======
->>>>>>> 5c5c6ce3f18da170e592bdaa1ace9ec59472dc61
 #~ msgid "✍️ Izoh Qoldirish"
 #~ msgstr "✍️ Write comment"
 
@@ -661,41 +653,6 @@ msgstr[1] ""
 
 #~ msgid "{name} {filename!r} is not executable."
 #~ msgstr ""
-
-#~ msgid "{len_type} values are required, but {len_value} was given."
-#~ msgid_plural "{len_type} values are required, but {len_value} were given."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "Got unexpected extra argument ({args})"
-#~ msgid_plural "Got unexpected extra arguments ({args})"
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "Takes {nargs} values but 1 was given."
-#~ msgid_plural "Takes {nargs} values but {len} were given."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "Did you mean {possibility}?"
-#~ msgid_plural "(Possible options: {possibilities})"
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "Option {name!r} requires an argument."
-#~ msgid_plural "Option {name!r} requires {nargs} arguments."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "{value!r} is not {choice}."
-#~ msgid_plural "{value!r} is not one of {choices}."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
-
-#~ msgid "{value!r} does not match the format {format}."
-#~ msgid_plural "{value!r} does not match the formats {formats}."
-#~ msgstr[0] ""
-#~ msgstr[1] ""
 
 #~ msgid "{len_type} values are required, but {len_value} was given."
 #~ msgid_plural "{len_type} values are required, but {len_value} were given."
