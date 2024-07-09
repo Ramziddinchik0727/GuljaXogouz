@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-09 21:34+0500\n"
+"POT-Creation-Date: 2024-07-09 23:03+0500\n"
 "PO-Revision-Date: 2024-06-25 17:51+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh\n"
@@ -43,13 +43,13 @@ msgid "😕 Kechirasiz sizning savatingiz bosh"
 msgstr "😕 Извините, ваша корзина пуста."
 
 #: handlers/users/main_buttons.py:97 handlers/users/menu.py:18
-#: handlers/users/menu.py:91 handlers/users/start.py:47
+#: handlers/users/menu.py:92 handlers/users/start.py:47
 #: handlers/users/start.py:69 keyboards/inline/inline_keyboards.py:34
 msgid "⬅️ Ortga"
 msgstr "⬅️ Назад"
 
 #: handlers/users/main_buttons.py:98 handlers/users/menu.py:19
-#: handlers/users/menu.py:92 handlers/users/start.py:48
+#: handlers/users/menu.py:93 handlers/users/start.py:48
 #: handlers/users/start.py:70 keyboards/default/users_keyboards.py:81
 #: keyboards/inline/inline_keyboards.py:31
 msgid "🛍 Savat"
@@ -60,19 +60,23 @@ msgstr "🛍 Корзина"
 msgid "😊 Bizning menyu"
 msgstr "😋 Наше меню"
 
-#: handlers/users/menu.py:36
+#: handlers/users/menu.py:21
+msgid " menyu"
+msgstr " меню"
+
+#: handlers/users/menu.py:37
 msgid "Taom haqida"
 msgstr "О еде"
 
-#: handlers/users/menu.py:37
+#: handlers/users/menu.py:38
 msgid "Taom"
 msgstr "Еда"
 
-#: handlers/users/menu.py:38
+#: handlers/users/menu.py:39
 msgid "Taom narxi"
 msgstr "Цена еды"
 
-#: handlers/users/menu.py:76
+#: handlers/users/menu.py:77
 msgid ""
 "😕 Kechirasiz. Mahsulotni 1 taga kamaytirish uchun, mahsulot kamida 1 dona"
 " bolishi kerak!"
@@ -80,7 +84,7 @@ msgstr ""
 "😕Прости. Чтобы уменьшить произведение на 1, оно должно быть не менее 1 "
 "дюйма. должно быть!"
 
-#: handlers/users/menu.py:82
+#: handlers/users/menu.py:83
 msgid "✅ Mahsulot savatingizdan olib tashlandi."
 msgstr "✅ Товар удален из корзины."
 
