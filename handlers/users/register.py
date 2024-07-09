@@ -11,7 +11,7 @@ async def register_lang(call: types.CallbackQuery, state: FSMContext):
     await state.update_data({
         'lang': call.data
     })
-    userga = _('🇺🇿 Uz1bek tili tanlandi. Iltimos ismingizni kiriting.', locale=call.data)
+    userga = _('Uzbek tili tanlandi. Iltimos ismingizni kiriting.', locale=call.data)
     await call.message.delete()
     await call.message.answer(text=userga)
     await RegisterState.full_name.set()
