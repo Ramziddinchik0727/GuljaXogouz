@@ -202,7 +202,7 @@ async def enter_photo_handler(message: types.Message, state: FSMContext):
     await message.answer(text=f"😊 Iltimos rasm yoki video kiriting", reply_markup=await cancel(lang='uz'))
     await state.set_state('send_photo')
 
-@dp.message_handler(state='send_photo', content_types=[types.ContentTypes.PHOTO, types.ContentType.VIDEO])
+@dp.message_handler(state='send_photo', content_types=[types.ContentTypes.PHOTO, types.ContentType.VIDEO]) # Admin can send video
 async def send_for_users_handler(message: types.Message, state: FSMContext):
     data = await state.get_data()
     await message.answer(text=f"😊 Foydalanuvchilarga xabar yuborilmoqda.", reply_markup=ReplyKeyboardRemove())
