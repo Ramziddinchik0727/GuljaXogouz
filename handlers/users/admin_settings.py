@@ -124,7 +124,6 @@ async def select_food_to_delete_handler(message: types.Message, state: FSMContex
     await state.update_data({
         'name': message.text
     })
-    await basket_functions(work='DELETE_FOR', name=message.text)
     await menu_functions(work='DELETE', data=await state.get_data())
     await message.answer(text=f"😊 Taom muvaffaqqiyatli ochirildi.", reply_markup=admins_panel)
     await state.finish()

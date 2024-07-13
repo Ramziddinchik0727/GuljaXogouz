@@ -17,7 +17,8 @@ async def in_menu(message: types.Message, state: FSMContext):
     })
     foods.insert(KeyboardButton(text=_(f"⬅️ Ortga", locale=user[4])))
     foods.insert(KeyboardButton(text=_(f"🛍 Savat", locale=user[4])))
-    userga = f"😋 {message.text} {_('menyu', locale=user[4])}"
+    userga = f"😋 {message.text}"
+    userga += _(' menyu', locale=user[4])
     for food in menu_foods:
         foods.insert(KeyboardButton(text=food['name']))
     await message.answer(text=userga, reply_markup=foods)

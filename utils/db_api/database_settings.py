@@ -1,3 +1,4 @@
+
 from main.models import *
 from main.database_set import database
 from translator import translate_uz_to_ru, translate_uz_to_en, translate_uz_to_zh
