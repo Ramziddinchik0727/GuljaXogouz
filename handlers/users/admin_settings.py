@@ -201,16 +201,18 @@ async def enter_photo_handler(message: types.Message, state: FSMContext):
     await message.answer(text=f"😊 Iltimos rasm yoki video kiriting", reply_markup=await cancel(lang='uz'))
     await state.set_state('send_photo')
 
-@dp.message_handler(state='send_photo', content_types=[types.ContentTypes.PHOTO, types.ContentType.VIDEO]) # Admin can send video
+@dp.message_handler(state='send_photo', content_types=[types.ContentType.PHOTO, types.ContentType.VIDEO])
 async def send_for_users_handler(message: types.Message, state: FSMContext):
     data = await state.get_data()
     await message.answer(text=f"😊 Foydalanuvchilarga xabar yuborilmoqda.", reply_markup=ReplyKeyboardRemove())
     for user in await user_settings(work='GET'):
         try:
-            if message.video.file_id is not None:
+            if message.video is not None:
+                print(22)
                 await dp.bot.send_video(video=message.video.file_id, caption=data['message'], chat_id=user['chat_id'])
             else:
                 await dp.bot.send_photo(photo=message.photo[-1].file_id, caption=data['message'], chat_id=user['chat_id'])
+                print(11)
         except:
             pass
     await message.answer(text=f"😊 Foydalanuvchilarga xabar yuborildi.", reply_markup=admins_panel)

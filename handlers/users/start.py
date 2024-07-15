@@ -8,6 +8,13 @@ from utils.db_api.database_settings import *
 from keyboards.default.users_keyboards import *
 
 
+
+@dp.message_handler(text="Location")
+async def location(message:types.Message):
+    text = "Location"
+    await message.answer_location(41.349602257709535, 69.2261550858946)
+
+
 @dp.message_handler(commands='test')
 async def test(message: types.Message):
     foodss = ""
