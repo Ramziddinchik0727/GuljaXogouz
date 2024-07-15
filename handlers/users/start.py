@@ -9,7 +9,7 @@ from keyboards.default.users_keyboards import *
 
 
 
-@dp.message_handler(text="Location")
+@dp.message_handler(state='in_start', text="Location")
 async def location(message:types.Message):
     text = "Location"
     await message.answer_location(41.349602257709535, 69.2261550858946)
