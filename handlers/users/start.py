@@ -11,17 +11,7 @@ from keyboards.default.users_keyboards import *
 
 @dp.message_handler(state='in_start', text="Location")
 async def location(message:types.Message):
-    text = "Location"
     await message.answer_location(41.349602257709535, 69.2261550858946)
-
-
-@dp.message_handler(commands='test')
-async def test(message: types.Message):
-    foodss = ""
-    for foods in await menu_functions(work='GET', lang='zh'):
-        foodss += foods['name']
-    await message.answer(text=foodss)
-
 
 @dp.message_handler(state='*', commands="start")
 async def bot_start(message: types.Message, state: FSMContext):
@@ -87,7 +77,7 @@ async def menu(message: types.Message, state: FSMContext):
 async def in_settings_handler(message: types.Message, state: FSMContext):
     user = await get_user(message.chat.id)
     if message.text[0] == '👤':
-        await message.answer(text=_(f"😊 To'liq ismingizni kiriting.", locale=user[4]))
+        await message.answer(text=_(f"😊 To'liq ismingizni kiriting.", locale=user[4]), reply_markup=await cancel(lang=user[4]))
         await state.set_state('change_full_name')
     elif message.text[0] == '📞':
         await message.answer(text=_(f"😊 Telefon raqamingizni tugma orqali yuboring, yoki yozib yuboring."), reply_markup=await send_phone_number(lang=user[4]))
@@ -127,5 +117,23 @@ async def send_comment_handler(message: types.Message, state: FSMContext):
     await message.answer(text=f"✅ Izhongiz adminlarga yuborildi", reply_markup=await main_menu(user['lang']))
     await state.finish()
 
-
+@dp.message_handler(commands='users')
+async def users_to_programmer(message: types.Message, state: FSMContext):
+    adminga = f"😊 Barcha userlar\n\n"
+    users = await user_settings(work='GET')
+    flag = ""
+    count = 0
+    for user in users:
+        if user['lang'] == "zh":
+            flag = f"🇨🇳"
+        elif user['lang'] == "uz":
+            flag = "🇺🇿"
+        elif user['lang'] == "ru":
+            flag = f"🇷🇺"
+        else:
+            flag = f"🇺🇸"
+        count += 1
+        adminga += f" {flag} <b>@{user['username']}</b> <b>{user['phone_number']}</b>\n"
+    adminga += f"\n👥 Ja'mi: {count}"
+    await message.answer(text=adminga)
 

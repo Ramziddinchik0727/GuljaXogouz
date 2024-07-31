@@ -98,7 +98,7 @@ async def enter_price_change_food_price_handler(message: types.Message, state: F
         })
         data = await state.get_data()
         await menu_functions(work='CHANGE_PRICE', data=data)
-        await message.answer(text=f"😊{data['name']} taom narxi {message.text} so'mga o'zgartirildi")
+        await message.answer(text=f"😊{data['name']} taom narxi {message.text} so'mga o'zgartirildi", reply_markup=admins_panel)
         await state.finish()
     except Exception as e:
         await message.answer(text=f"😕 Kechirasiz. Taom narxini faqat butun sonlarda kiritish mumkin.")
