@@ -86,6 +86,7 @@ async def send_or_select_location_handler(message: types.Message, state: FSMCont
     await basket_functions(chat_id=message.chat.id, work='DELETE_BASKET')
     usergaa = _(f"✅ Buyurtmangiz qabul qilindi.", locale=user['lang'])
     usergaa += "\n"
+    usergaa += _(f"😊 Hurmatli mijoz, buyurtmangiz qabul qilindi! Bizning operatorlarimiz bir necha daqiqa ichida siz bilan bog'lanadi. Hurmat bilan, Guljaxogo.", locale=user['lang'])
     usergaa += _(f"🆔 Buyurtma raqamingiz: ", locale=user['lang'])
     usergaa += order_number
     await message.answer(usergaa, reply_markup=await main_menu(lang=user['lang']))

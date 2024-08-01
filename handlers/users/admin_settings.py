@@ -208,11 +208,9 @@ async def send_for_users_handler(message: types.Message, state: FSMContext):
     for user in await user_settings(work='GET'):
         try:
             if message.video is not None:
-                print(22)
                 await dp.bot.send_video(video=message.video.file_id, caption=data['message'], chat_id=user['chat_id'])
             else:
                 await dp.bot.send_photo(photo=message.photo[-1].file_id, caption=data['message'], chat_id=user['chat_id'])
-                print(11)
         except:
             pass
     await message.answer(text=f"😊 Foydalanuvchilarga xabar yuborildi.", reply_markup=admins_panel)

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-09 23:03+0500\n"
+"POT-Creation-Date: 2024-08-01 15:55+0500\n"
 "PO-Revision-Date: 2024-06-26 12:15+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -24,7 +24,7 @@ msgstr "😊 Your cart"
 
 #: handlers/users/main_buttons.py:39 handlers/users/main_buttons.py:64
 #: handlers/users/main_buttons.py:90 handlers/users/order.py:19
-#: keyboards/default/users_keyboards.py:80
+#: keyboards/default/users_keyboards.py:81
 msgid "🏘 Asosiy menyu"
 msgstr "🏘 Main menu"
 
@@ -43,14 +43,14 @@ msgid "😕 Kechirasiz sizning savatingiz bosh"
 msgstr "😕 Sorry, your cart is empty"
 
 #: handlers/users/main_buttons.py:97 handlers/users/menu.py:18
-#: handlers/users/menu.py:92 handlers/users/start.py:47
-#: handlers/users/start.py:69 keyboards/inline/inline_keyboards.py:34
+#: handlers/users/menu.py:92 handlers/users/start.py:44
+#: handlers/users/start.py:66 keyboards/inline/inline_keyboards.py:34
 msgid "⬅️ Ortga"
 msgstr "⬅️ Back"
 
 #: handlers/users/main_buttons.py:98 handlers/users/menu.py:19
-#: handlers/users/menu.py:93 handlers/users/start.py:48
-#: handlers/users/start.py:70 keyboards/default/users_keyboards.py:81
+#: handlers/users/menu.py:93 handlers/users/start.py:45
+#: handlers/users/start.py:67 keyboards/default/users_keyboards.py:82
 #: keyboards/inline/inline_keyboards.py:31
 msgid "🛍 Savat"
 msgstr "🛍 Cart"
@@ -103,6 +103,14 @@ msgid "✅ Buyurtmangiz qabul qilindi."
 msgstr "✅ Your order has been received"
 
 #: handlers/users/order.py:89
+msgid ""
+"😊 Hurmatli mijoz, buyurtmangiz qabul qilindi! Bizning operatorlarimiz bir"
+" necha daqiqa ichida siz bilan bog'lanadi. Hurmat bilan, Guljaxogo."
+msgstr ""
+"😊 Dear customer, your order has been accepted! Our operators will contact"
+" you within a few minutes. Best regards, Guljaxogo."
+
+#: handlers/users/order.py:90
 msgid "🆔 Buyurtma raqamingiz: "
 msgstr "🆔 Your order number"
 
@@ -122,47 +130,47 @@ msgstr "🥳 Congratulations"
 msgid "Siz muvaffaqqiyatli royxatdan otdingiz."
 msgstr "You are successfully registered"
 
-#: handlers/users/start.py:27
+#: handlers/users/start.py:24
 msgid "😊 Assalomu alaykum. Xush kelibsiz."
 msgstr "😊 Assalomu alaykum. Welcome"
 
-#: handlers/users/start.py:49 handlers/users/start.py:71
+#: handlers/users/start.py:46 handlers/users/start.py:68
 msgid "😋 Bizning menyu"
 msgstr "😋 Our menu"
 
-#: handlers/users/start.py:56
+#: handlers/users/start.py:53
 msgid "😊 Izohingizni yozing"
 msgstr "😊 Write your comment"
 
-#: handlers/users/start.py:59 keyboards/default/users_keyboards.py:11
+#: handlers/users/start.py:56 keyboards/default/users_keyboards.py:11
 msgid "⚙️ Sozlamalar"
 msgstr "⚙️ Settings"
 
-#: handlers/users/start.py:83
+#: handlers/users/start.py:80
 msgid "😊 To'liq ismingizni kiriting."
 msgstr "😊 Please enter your full name"
 
-#: handlers/users/start.py:86
+#: handlers/users/start.py:83
 msgid "😊 Telefon raqamingizni tugma orqali yuboring, yoki yozib yuboring."
 msgstr "😊 Please send your phone number with button or write your phone number"
 
-#: handlers/users/start.py:89
+#: handlers/users/start.py:86
 msgid "😊 O'zingizga qulay tilni tanlang."
 msgstr "😊 Choose your preferred language"
 
-#: handlers/users/start.py:90
+#: handlers/users/start.py:87
 msgid "Mavjud tillar"
 msgstr "Available languages"
 
-#: handlers/users/start.py:96
+#: handlers/users/start.py:93
 msgid "😊 Muloqot tili o'zgartirildi."
 msgstr "😊 The communication language has been changed"
 
-#: handlers/users/start.py:103
+#: handlers/users/start.py:100
 msgid "😊 Ism muvaffaqqiyatli o'zgartirildi."
 msgstr "😊 Name successfully changed"
 
-#: handlers/users/start.py:110
+#: handlers/users/start.py:107
 msgid "😊 Telefon raqam o'zgartirildi."
 msgstr "😊 Phone number has been changed"
 
@@ -170,37 +178,37 @@ msgstr "😊 Phone number has been changed"
 msgid "🍴 Menyu"
 msgstr "🍴 Menu"
 
-#: keyboards/default/users_keyboards.py:21
+#: keyboards/default/users_keyboards.py:22
 msgid "💸 Naqd"
 msgstr ""
 
-#: keyboards/default/users_keyboards.py:25
-#: keyboards/default/users_keyboards.py:60
-#: keyboards/default/users_keyboards.py:70
+#: keyboards/default/users_keyboards.py:26
+#: keyboards/default/users_keyboards.py:61
+#: keyboards/default/users_keyboards.py:71
 msgid "❌ Bekor qilish"
 msgstr "❌ Cancel"
 
-#: keyboards/default/users_keyboards.py:34
+#: keyboards/default/users_keyboards.py:35
 msgid "👤 Ism Familyani O'zgartirish"
 msgstr "👤 Change ful name"
 
-#: keyboards/default/users_keyboards.py:35
+#: keyboards/default/users_keyboards.py:36
 msgid "📞 Telefon Raqamni O'zgartirish"
 msgstr "📞 Change phoone number"
 
-#: keyboards/default/users_keyboards.py:38
+#: keyboards/default/users_keyboards.py:39
 msgid "🇺🇿 🔁 🇷🇺 Tilni O'zgartirish"
 msgstr "🇺🇿 🔁 🇷🇺 Change language"
 
-#: keyboards/default/users_keyboards.py:39
+#: keyboards/default/users_keyboards.py:40
 msgid "🏘 Asosiy Menyu"
 msgstr "🏘 Main menu"
 
-#: keyboards/default/users_keyboards.py:49
+#: keyboards/default/users_keyboards.py:50
 msgid "📞 Telefon Raqamni Yuborish"
 msgstr "📞 Send phone number"
 
-#: keyboards/default/users_keyboards.py:59
+#: keyboards/default/users_keyboards.py:60
 msgid "📍 Joylashuv yuborish"
 msgstr "📍 Send location"
 
