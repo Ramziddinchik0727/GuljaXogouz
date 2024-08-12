@@ -6,13 +6,27 @@ admins_panel = ReplyKeyboardMarkup(
             KeyboardButton(text=f"🍴 Menyu sozlamalari"),
         ],
         [
+            KeyboardButton(text=f"🏷 Aksiya")
+        ],
+        [
             KeyboardButton(text=f"📝️ Xabar yuborish"),
             KeyboardButton(text=f"👥 Bot foydalanuvchilari")
         ],
         [
             KeyboardButton(text='🍴 Menyu'),
-            KeyboardButton(text='⚙️ Sozlamalar')
         ],
+    ], resize_keyboard=True
+)
+
+stock_keyboards = ReplyKeyboardMarkup(
+    keyboard=[
+        [
+            KeyboardButton(text=f"🏷 Aksiya yoqish o'chirish"),
+            KeyboardButton(text=f"➕🏷 Aksiya qoshish")
+        ],
+        [
+            KeyboardButton(text=f"❌ Bekor qilish")
+        ]
     ], resize_keyboard=True
 )
 

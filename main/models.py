@@ -14,6 +14,21 @@ users = sqlalchemy.Table(
     sqlalchemy.Column('created_at', sqlalchemy.DateTime(timezone=True))
 )
 
+stock = sqlalchemy.Table(
+    'stock',
+    metadata,
+    sqlalchemy.Column('id', sqlalchemy.Integer, primary_key=True),
+    sqlalchemy.Column('sum', sqlalchemy.Integer),
+    sqlalchemy.Column('present', sqlalchemy.String),
+)
+
+stock_status = sqlalchemy.Table(
+    'stock_status',
+    metadata,
+    sqlalchemy.Column('id', sqlalchemy.Integer, primary_key=True),
+    sqlalchemy.Column('status', sqlalchemy.Boolean)
+)
+
 menu = sqlalchemy.Table(
     "menu",
     metadata,

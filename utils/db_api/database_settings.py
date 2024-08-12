@@ -14,6 +14,25 @@ async def add_user(data: dict):
         created_at=data.get('created_at')
     ))
 
+async def add_stock(data: dict):
+    return await database.execute(query=stock.insert().values(
+        sum=data['sum'],
+        present=data['present']
+    ))
+
+async def get_stock_status():
+    return await database.fetch_one(query=stock_status.select().where(
+        status=True
+    ))
+
+async def activate_stock():
+    return await database.execute(query=stock_status.insert().values(
+        status=True
+    ))
+
+async def deactivate_stock():
+    return await database.execute(query=stock_status.delete())
+
 async def user_settings(lang=None, work=None, full_name=None, phone_number=None, username=None, chat_id=None):
     if work == f"UPDATE_LANG":
         return await database.execute(query=users.update().values(

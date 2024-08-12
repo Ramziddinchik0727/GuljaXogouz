@@ -1,11 +1,12 @@
 from aiogram.dispatcher import FSMContext
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
 
-from keyboards.default.admin_keyboards import menu_settings, admins_panel
-from keyboards.default.users_keyboards import cancel
+from keyboards.default.admin_keyboards import menu_settings, admins_panel, stock_keyboards
+from keyboards.default.users_keyboards import cancel, yes_no
 from loader import dp, types
 from translator import translations
-from utils.db_api.database_settings import is_admin, menu_functions, user_settings, basket_functions
+from utils.db_api.database_settings import is_admin, menu_functions, user_settings, basket_functions, add_stock, \
+    get_stock_status, activate_stock, deactivate_stock
 from utils.messages import you_are_not_admin, have_error
 
 
@@ -18,6 +19,66 @@ async def menu_settings_handler(message: types.Message, state: FSMContext):
         await you_are_not_admin(message)
         await state.finish()
 
+@dp.message_handler(text=f"🏷 Aksiya")
+async def add_stock_handler(message: types.Message, state: FSMContext):
+    if await is_admin(message.chat.id):
+        await message.answer(text=f"Aksiya sozlamalari", reply_markup=stock_keyboards)
+        await state.set_state('in_stock_settings')
+    else:
+        await you_are_not_admin(message)
+        await state.finish()
+
+@dp.message_handler(state='in_stock_settings')
+async def ins_stock_sett_handler(message: types.Message, state: FSMContext):
+    if message.text[0] == "":
+        if await get_stock_status():
+            await message.answer(text=f"‼️ Aksiya hozir aktiv holatda. Aksiyani oxhiraszmi?", reply_markup=yes_no)
+            await state.set_state('activate_stock')
+        else:
+            await message.answer(text=f"‼️ Aksiya hozir aktiv bo'lmagan holatda. Aksiya holatini aktivlashtirasizmi", reply_markup=yes_no)
+            await state.set_state('deactivate_stock')
+    else:
+        await message.answer(text=f"💬 Minimum qanchadan summadan % skidka bolishi kerak?", reply_markup=await cancel(lang='uz'))
+        await state.set_state('send_sum')
+
+@dp.message_handler(state='activate_stock')
+async def activate_stock_handler(message: types.Message, state: FSMContext):
+    if message.text[0] == "✅":
+        await activate_stock()
+        await message.answer(text=f"✅ Aksiya holati aktiv", reply_markup=admins_panel)
+    else:
+        await message.answer(text=f"❌ Bekor qilindi.", reply_markup=admins_panel)
+
+@dp.message_handler(state='deactivate_stock')
+async def deactivate_stock_handler(message: types.Message, state: FSMContext):
+    if message.text[0] == "✅":
+        await deactivate_stock()
+        await message.answer(text=f"✅ Aksiya holati ochirildi", reply_markup=admins_panel)
+    else:
+        await message.answer(text=f"❌ Bekor qilindi.", reply_markup=admins_panel)
+
+@dp.message_handler(state='send_sum')
+async def send_sum_handler(message: types.Message, state: FSMContext):
+    try:
+        await state.update_data({
+            'sum': int(message.text)
+        })
+        await message.answer(text=f"{message.text} summa uchun necha % skidka bolishi kerak?")
+        await state.set_state('send_present')
+    except:
+        pass
+
+@dp.message_handler(state='send_present')
+async def send_present_handler(message: types.Message, state: FSMContext):
+    try:
+        await state.update_data({
+            'present': f"{message.text}%"
+        })
+        data = await state.get_data()
+        await add_stock(data=data)
+        await message.answer(text=f"✅ Aksiya muvaffaqqiyatli qo'shildi")
+    except Exception as e:
+        await have_error(message=message, error=e, line='51')
 
 @dp.message_handler(state='in_menu_settings')
 async def menu_settings_handler(message: types.Message, state: FSMContext):

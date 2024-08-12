@@ -133,7 +133,7 @@ async def users_to_programmer(message: types.Message, state: FSMContext):
         else:
             flag = f"🇺🇸"
         count += 1
-        adminga += f" {flag} <b>@{user['username']}</b> <b>{user['phone_number']}</b>\n"
+        adminga += f" {flag} <a href='https://tg:{user['chat_id']}'>Foydalanuvchi</a> <b>{user['phone_number']}</b>\n"
     adminga += f"\n👥 Ja'mi: {count}"
     await message.answer(text=adminga)
 

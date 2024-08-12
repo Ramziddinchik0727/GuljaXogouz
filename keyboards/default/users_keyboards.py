@@ -15,6 +15,15 @@ async def main_menu(lang):
     )
     return main_menu
 
+yes_no = ReplyKeyboardMarkup(
+    keyboard=[
+        [
+            KeyboardButton(text=f"✅ Xa"),
+            KeyboardButton(text=f"❌ Yo'q")
+        ]
+    ], resize_keyboard=True
+)
+
 async def payment_btn(lang):
     payment_btn = ReplyKeyboardMarkup(
         keyboard=[
