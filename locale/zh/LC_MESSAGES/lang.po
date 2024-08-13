@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-08-01 17:01+0500\n"
+"POT-Creation-Date: 2024-08-13 11:58+0500\n"
 "PO-Revision-Date: 2024-06-26 12:16+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh\n"
@@ -23,18 +23,18 @@ msgid "😊 Savatingiz"
 msgstr "😊 你的购物车"
 
 #: handlers/users/main_buttons.py:39 handlers/users/main_buttons.py:64
-#: handlers/users/main_buttons.py:90 handlers/users/order.py:19
-#: keyboards/default/users_keyboards.py:81
+#: handlers/users/main_buttons.py:90 handlers/users/order.py:20
+#: keyboards/default/users_keyboards.py:90
 msgid "🏘 Asosiy menyu"
 msgstr "🏘 主菜单"
 
 #: handlers/users/main_buttons.py:40 handlers/users/main_buttons.py:65
-#: handlers/users/order.py:20
+#: handlers/users/order.py:21
 msgid "🛒 Buyurtma berish"
 msgstr "🛒 下订单"
 
 #: handlers/users/main_buttons.py:48 handlers/users/main_buttons.py:73
-#: handlers/users/order.py:35
+#: handlers/users/order.py:47
 msgid "💰 Ja'mi: "
 msgstr "💰 全部的："
 
@@ -50,7 +50,7 @@ msgstr "⬅️返回"
 
 #: handlers/users/main_buttons.py:98 handlers/users/menu.py:19
 #: handlers/users/menu.py:93 handlers/users/start.py:45
-#: handlers/users/start.py:67 keyboards/default/users_keyboards.py:82
+#: handlers/users/start.py:67 keyboards/default/users_keyboards.py:91
 #: keyboards/inline/inline_keyboards.py:31
 msgid "🛍 Savat"
 msgstr "🛍 购物车"
@@ -85,29 +85,29 @@ msgstr "😕 抱歉。 要减少产品的数量，产品数量至少要为 1 件
 msgid "✅ Mahsulot savatingizdan olib tashlandi."
 msgstr "✅ 您的订单已经发货。"
 
-#: handlers/users/order.py:23 handlers/users/order.py:25
+#: handlers/users/order.py:24 handlers/users/order.py:26
 msgid "✅ Mahsulot savatingizdan muvaffaqqiyatli olib tashlandi."
 msgstr "✅ 您的订单已成功发货"
 
-#: handlers/users/order.py:32
+#: handlers/users/order.py:44
 msgid "‼️ Iltimos ushbu kartaga pul o'tkazing, va to'lov chekini yuboring.‼️"
 msgstr "‼️ 请将款项转入此卡，并发送付款凭证。‼️"
 
-#: handlers/users/order.py:47
+#: handlers/users/order.py:59
 msgid "📍 Yetkazib berish joylashuvini yuboring"
 msgstr "📍 您的订单已经接受"
 
-#: handlers/users/order.py:87
+#: handlers/users/order.py:101
 msgid "✅ Buyurtmangiz qabul qilindi."
 msgstr "✅ 您的订单已被接受。"
 
-#: handlers/users/order.py:89
+#: handlers/users/order.py:103
 msgid ""
 "😊 Hurmatli mijoz, buyurtmangiz qabul qilindi! Bizning operatorlarimiz bir"
 " necha daqiqa ichida siz bilan bog'lanadi. Hurmat bilan, Guljaxogo."
 msgstr "😊 尊敬的顾客，您的订单已被接受！ 我们的接线员将在几分钟内与您联系。最好的问候，Guljaxogo。"
 
-#: handlers/users/order.py:90
+#: handlers/users/order.py:104
 msgid "🆔 Buyurtma raqamingiz: "
 msgstr "🆔 订单号码："
 
@@ -175,482 +175,36 @@ msgstr "😊 电话号码已更改"
 msgid "🍴 Menyu"
 msgstr "🍴 菜单"
 
-#: keyboards/default/users_keyboards.py:22
+#: keyboards/default/users_keyboards.py:31
 msgid "💸 Naqd"
 msgstr ""
 
-#: keyboards/default/users_keyboards.py:26
-#: keyboards/default/users_keyboards.py:61
-#: keyboards/default/users_keyboards.py:71
+#: keyboards/default/users_keyboards.py:35
+#: keyboards/default/users_keyboards.py:70
+#: keyboards/default/users_keyboards.py:80
 msgid "❌ Bekor qilish"
 msgstr "❌ 取消"
 
-#: keyboards/default/users_keyboards.py:35
+#: keyboards/default/users_keyboards.py:44
 msgid "👤 Ism Familyani O'zgartirish"
 msgstr "👤 更改姓名"
 
-#: keyboards/default/users_keyboards.py:36
+#: keyboards/default/users_keyboards.py:45
 msgid "📞 Telefon Raqamni O'zgartirish"
 msgstr "📞 更改电话号码"
 
-#: keyboards/default/users_keyboards.py:39
+#: keyboards/default/users_keyboards.py:48
 msgid "🇺🇿 🔁 🇷🇺 Tilni O'zgartirish"
 msgstr "🇺🇿 🔁 🇷🇺 更改语言"
 
-#: keyboards/default/users_keyboards.py:40
+#: keyboards/default/users_keyboards.py:49
 msgid "🏘 Asosiy Menyu"
 msgstr "🏘 主菜单"
 
-#: keyboards/default/users_keyboards.py:50
+#: keyboards/default/users_keyboards.py:59
 msgid "📞 Telefon Raqamni Yuborish"
 msgstr "📞 发送电话号码"
 
-#: keyboards/default/users_keyboards.py:60
+#: keyboards/default/users_keyboards.py:69
 msgid "📍 Joylashuv yuborish"
 msgstr "📍 发送位置"
-
-#: venv/lib/python3.10/site-packages/click/_termui_impl.py:518
-msgid "{editor}: Editing failed"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/_termui_impl.py:522
-msgid "{editor}: Editing failed: {e}"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:1120
-msgid "Aborted!"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:1309
-#: venv/lib/python3.10/site-packages/click/decorators.py:559
-msgid "Show this message and exit."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:1340
-#: venv/lib/python3.10/site-packages/click/core.py:1370
-msgid "(Deprecated) {text}"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:1387
-msgid "Options"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:1415
-msgid "Got unexpected extra argument ({args})"
-msgid_plural "Got unexpected extra arguments ({args})"
-msgstr[0] ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:1428
-msgid "DeprecationWarning: The command {name!r} is deprecated."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:1636
-msgid "Commands"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:1668
-msgid "Missing command."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:1746
-msgid "No such command {name!r}."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:2310
-msgid "Value must be an iterable."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:2333
-msgid "Takes {nargs} values but 1 was given."
-msgid_plural "Takes {nargs} values but {len} were given."
-msgstr[0] ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:2778
-msgid "env var: {var}"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:2808
-msgid "(dynamic)"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:2821
-msgid "default: {default}"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/core.py:2834
-msgid "required"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/decorators.py:465
-#, python-format
-msgid "%(prog)s, version %(version)s"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/decorators.py:528
-msgid "Show the version and exit."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:44
-#: venv/lib/python3.10/site-packages/click/exceptions.py:80
-msgid "Error: {message}"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:72
-msgid "Try '{command} {option}' for help."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:121
-msgid "Invalid value: {message}"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:123
-msgid "Invalid value for {param_hint}: {message}"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:179
-msgid "Missing argument"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:181
-msgid "Missing option"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:183
-msgid "Missing parameter"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:185
-msgid "Missing {param_type}"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:192
-msgid "Missing parameter: {param_name}"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:212
-msgid "No such option: {name}"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:226
-msgid "Did you mean {possibility}?"
-msgid_plural "(Possible options: {possibilities})"
-msgstr[0] ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:262
-msgid "unknown error"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/exceptions.py:269
-msgid "Could not open file {filename!r}: {message}"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/parser.py:231
-msgid "Argument {name!r} takes {nargs} values."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/parser.py:413
-msgid "Option {name!r} does not take a value."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/parser.py:473
-msgid "Option {name!r} requires an argument."
-msgid_plural "Option {name!r} requires {nargs} arguments."
-msgstr[0] ""
-
-#: venv/lib/python3.10/site-packages/click/shell_completion.py:318
-msgid "Shell completion is not supported for Bash versions older than 4.4."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/shell_completion.py:326
-msgid "Couldn't detect Bash version, shell completion is not supported."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/termui.py:158
-msgid "Repeat for confirmation"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/termui.py:174
-msgid "Error: The value you entered was invalid."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/termui.py:176
-msgid "Error: {e.message}"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/termui.py:187
-msgid "Error: The two entered values do not match."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/termui.py:243
-msgid "Error: invalid input"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/termui.py:773
-msgid "Press any key to continue..."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/types.py:266
-msgid ""
-"Choose from:\n"
-"\t{choices}"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/types.py:300
-msgid "{value!r} is not {choice}."
-msgid_plural "{value!r} is not one of {choices}."
-msgstr[0] ""
-
-#: venv/lib/python3.10/site-packages/click/types.py:394
-msgid "{value!r} does not match the format {format}."
-msgid_plural "{value!r} does not match the formats {formats}."
-msgstr[0] ""
-
-#: venv/lib/python3.10/site-packages/click/types.py:414
-msgid "{value!r} is not a valid {number_type}."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/types.py:470
-msgid "{value} is not in the range {range}."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/types.py:611
-msgid "{value!r} is not a valid boolean."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/types.py:635
-msgid "{value!r} is not a valid UUID."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/types.py:822
-msgid "file"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/types.py:824
-msgid "directory"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/types.py:826
-msgid "path"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/types.py:877
-msgid "{name} {filename!r} does not exist."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/types.py:886
-msgid "{name} {filename!r} is a file."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/types.py:894
-msgid "{name} '{filename}' is a directory."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/types.py:903
-msgid "{name} {filename!r} is not readable."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/types.py:912
-msgid "{name} {filename!r} is not writable."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/types.py:921
-msgid "{name} {filename!r} is not executable."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/click/types.py:987
-msgid "{len_type} values are required, but {len_value} was given."
-msgid_plural "{len_type} values are required, but {len_value} were given."
-msgstr[0] ""
-
-#~ msgid "✍️ Izoh Qoldirish"
-#~ msgstr "✍️ 留下评论"
-
-#~ msgid "{editor}: Editing failed"
-#~ msgstr ""
-
-#~ msgid "{editor}: Editing failed: {e}"
-#~ msgstr ""
-
-#~ msgid "Aborted!"
-#~ msgstr ""
-
-#~ msgid "Show this message and exit."
-#~ msgstr ""
-
-#~ msgid "(Deprecated) {text}"
-#~ msgstr ""
-
-#~ msgid "Options"
-#~ msgstr ""
-
-#~ msgid "Got unexpected extra argument ({args})"
-#~ msgid_plural "Got unexpected extra arguments ({args})"
-#~ msgstr[0] ""
-
-#~ msgid "DeprecationWarning: The command {name!r} is deprecated."
-#~ msgstr ""
-
-#~ msgid "Commands"
-#~ msgstr ""
-
-#~ msgid "Missing command."
-#~ msgstr ""
-
-#~ msgid "No such command {name!r}."
-#~ msgstr ""
-
-#~ msgid "Value must be an iterable."
-#~ msgstr ""
-
-#~ msgid "Takes {nargs} values but 1 was given."
-#~ msgid_plural "Takes {nargs} values but {len} were given."
-#~ msgstr[0] ""
-
-#~ msgid "env var: {var}"
-#~ msgstr ""
-
-#~ msgid "(dynamic)"
-#~ msgstr ""
-
-#~ msgid "default: {default}"
-#~ msgstr ""
-
-#~ msgid "required"
-#~ msgstr ""
-
-#~ msgid "%(prog)s, version %(version)s"
-#~ msgstr ""
-
-#~ msgid "Show the version and exit."
-#~ msgstr ""
-
-#~ msgid "Error: {message}"
-#~ msgstr ""
-
-#~ msgid "Try '{command} {option}' for help."
-#~ msgstr ""
-
-#~ msgid "Invalid value: {message}"
-#~ msgstr ""
-
-#~ msgid "Invalid value for {param_hint}: {message}"
-#~ msgstr ""
-
-#~ msgid "Missing argument"
-#~ msgstr ""
-
-#~ msgid "Missing option"
-#~ msgstr ""
-
-#~ msgid "Missing parameter"
-#~ msgstr ""
-
-#~ msgid "Missing {param_type}"
-#~ msgstr ""
-
-#~ msgid "Missing parameter: {param_name}"
-#~ msgstr ""
-
-#~ msgid "No such option: {name}"
-#~ msgstr ""
-
-#~ msgid "Did you mean {possibility}?"
-#~ msgid_plural "(Possible options: {possibilities})"
-#~ msgstr[0] ""
-
-#~ msgid "unknown error"
-#~ msgstr ""
-
-#~ msgid "Could not open file {filename!r}: {message}"
-#~ msgstr ""
-
-#~ msgid "Argument {name!r} takes {nargs} values."
-#~ msgstr ""
-
-#~ msgid "Option {name!r} does not take a value."
-#~ msgstr ""
-
-#~ msgid "Option {name!r} requires an argument."
-#~ msgid_plural "Option {name!r} requires {nargs} arguments."
-#~ msgstr[0] ""
-
-#~ msgid "Shell completion is not supported for Bash versions older than 4.4."
-#~ msgstr ""
-
-#~ msgid "Couldn't detect Bash version, shell completion is not supported."
-#~ msgstr ""
-
-#~ msgid "Repeat for confirmation"
-#~ msgstr ""
-
-#~ msgid "Error: The value you entered was invalid."
-#~ msgstr ""
-
-#~ msgid "Error: {e.message}"
-#~ msgstr ""
-
-#~ msgid "Error: The two entered values do not match."
-#~ msgstr ""
-
-#~ msgid "Error: invalid input"
-#~ msgstr ""
-
-#~ msgid "Press any key to continue..."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Choose from:\n"
-#~ "\t{choices}"
-#~ msgstr ""
-
-#~ msgid "{value!r} is not {choice}."
-#~ msgid_plural "{value!r} is not one of {choices}."
-#~ msgstr[0] ""
-
-#~ msgid "{value!r} does not match the format {format}."
-#~ msgid_plural "{value!r} does not match the formats {formats}."
-#~ msgstr[0] ""
-
-#~ msgid "{value!r} is not a valid {number_type}."
-#~ msgstr ""
-
-#~ msgid "{value} is not in the range {range}."
-#~ msgstr ""
-
-#~ msgid "{value!r} is not a valid boolean."
-#~ msgstr ""
-
-#~ msgid "{value!r} is not a valid UUID."
-#~ msgstr ""
-
-#~ msgid "file"
-#~ msgstr ""
-
-#~ msgid "directory"
-#~ msgstr ""
-
-#~ msgid "path"
-#~ msgstr ""
-
-#~ msgid "{name} {filename!r} does not exist."
-#~ msgstr ""
-
-#~ msgid "{name} {filename!r} is a file."
-#~ msgstr ""
-
-#~ msgid "{name} '{filename}' is a directory."
-#~ msgstr ""
-
-#~ msgid "{name} {filename!r} is not readable."
-#~ msgstr ""
-
-#~ msgid "{name} {filename!r} is not writable."
-#~ msgstr ""
-
-#~ msgid "{name} {filename!r} is not executable."
-#~ msgstr ""
-
-#~ msgid "{len_type} values are required, but {len_value} was given."
-#~ msgid_plural "{len_type} values are required, but {len_value} were given."
-#~ msgstr[0] ""
-

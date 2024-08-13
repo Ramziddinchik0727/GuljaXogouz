@@ -4,7 +4,8 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
 from keyboards.default.users_keyboards import main_menu, my_locations, payment_btn, cancel
 from loader import dp, types, _
-from utils.db_api.database_settings import basket_functions, get_user, get_admins, menu_functions, payment_functions
+from utils.db_api.database_settings import basket_functions, get_user, get_admins, menu_functions, payment_functions, \
+    get_stock_status, get_best_discount
 from data.config import env
 
 
@@ -29,6 +30,18 @@ async def in_basket_handler(message: types.Message, state: FSMContext):
         count = 0
         for food in await basket_functions(work='GET', chat_id=message.chat.id):
             count += food['quantity'] * food['price']
+
+        # Eng mos skidkani olish
+        min_sum, discount_percent = await get_best_discount(total_amount=count)
+
+        # Skidkani hisoblash va qo'llash
+        if discount_percent > 0:
+            discount = count * (discount_percent / 100)
+            count -= discount
+        count = int(count)
+        await state.update_data({
+            'count': count
+        })
         userga = _("‼️ Iltimos ushbu kartaga pul o'tkazing, va to'lov chekini yuboring.‼️", locale=user[4])
         userga += f"\n💳 8600572979823346"
         userga += f"\n👤 Umarbayev Xadjimurat\n"
@@ -78,11 +91,13 @@ async def send_or_select_location_handler(message: types.Message, state: FSMCont
         food = await menu_functions(work='GET_FOR', name=basket['product'])
         count += basket['quantity'] * basket['price']
         adminga += f"<b>{food['name']}</b> \t | \t <b>{basket['quantity']}</b> \t | \t <b> {basket['quantity']}  * {basket['price']} = {basket['quantity'] * basket['price']}</b>\n"
+    if data['count'] != count:
+        count = f"<s>{count}</s> -> <b>{data['count']}</b>"
     await basket_functions(work='DELETE_BASKET')
     adminga += f"\n💰 Ja'mi: {count} so'm"
-    await dp.bot.send_location(chat_id=env.str('GROUP_ID'), latitude=message.location.latitude,
+    await dp.bot.send_location(chat_id=5596277119, latitude=message.location.latitude,
                                longitude=message.location.longitude)
-    await dp.bot.send_photo(chat_id=env.str('GROUP_ID'), caption=adminga, photo=data['photo'])
+    await dp.bot.send_photo(chat_id=5596277119, caption=adminga, photo=data['photo'])
     await basket_functions(chat_id=message.chat.id, work='DELETE_BASKET')
     usergaa = _(f"✅ Buyurtmangiz qabul qilindi.", locale=user['lang'])
     usergaa += "\n"

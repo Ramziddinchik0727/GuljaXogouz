@@ -30,13 +30,13 @@ async def add_stock_handler(message: types.Message, state: FSMContext):
 
 @dp.message_handler(state='in_stock_settings')
 async def ins_stock_sett_handler(message: types.Message, state: FSMContext):
-    if message.text[0] == "":
+    if message.text[0] == "🏷":
         if await get_stock_status():
             await message.answer(text=f"‼️ Aksiya hozir aktiv holatda. Aksiyani oxhiraszmi?", reply_markup=yes_no)
-            await state.set_state('activate_stock')
+            await state.set_state('deactivate_stock')
         else:
             await message.answer(text=f"‼️ Aksiya hozir aktiv bo'lmagan holatda. Aksiya holatini aktivlashtirasizmi", reply_markup=yes_no)
-            await state.set_state('deactivate_stock')
+            await state.set_state('activate_stock')
     else:
         await message.answer(text=f"💬 Minimum qanchadan summadan % skidka bolishi kerak?", reply_markup=await cancel(lang='uz'))
         await state.set_state('send_sum')
@@ -48,6 +48,7 @@ async def activate_stock_handler(message: types.Message, state: FSMContext):
         await message.answer(text=f"✅ Aksiya holati aktiv", reply_markup=admins_panel)
     else:
         await message.answer(text=f"❌ Bekor qilindi.", reply_markup=admins_panel)
+    await state.finish()
 
 @dp.message_handler(state='deactivate_stock')
 async def deactivate_stock_handler(message: types.Message, state: FSMContext):
@@ -56,6 +57,7 @@ async def deactivate_stock_handler(message: types.Message, state: FSMContext):
         await message.answer(text=f"✅ Aksiya holati ochirildi", reply_markup=admins_panel)
     else:
         await message.answer(text=f"❌ Bekor qilindi.", reply_markup=admins_panel)
+    await state.finish()
 
 @dp.message_handler(state='send_sum')
 async def send_sum_handler(message: types.Message, state: FSMContext):
@@ -76,7 +78,8 @@ async def send_present_handler(message: types.Message, state: FSMContext):
         })
         data = await state.get_data()
         await add_stock(data=data)
-        await message.answer(text=f"✅ Aksiya muvaffaqqiyatli qo'shildi")
+        await message.answer(text=f"✅ Aksiya muvaffaqqiyatli qo'shildi", reply_markup=admins_panel)
+        await state.finish()
     except Exception as e:
         await have_error(message=message, error=e, line='51')
 

@@ -1,3 +1,4 @@
+from sqlalchemy import desc
 
 from main.models import *
 from main.database_set import database
@@ -22,8 +23,16 @@ async def add_stock(data: dict):
 
 async def get_stock_status():
     return await database.fetch_one(query=stock_status.select().where(
-        status=True
+        stock_status.c.status==True
     ))
+
+async def get_best_discount(total_amount):
+    query = stock.select().where(stock.c.sum <= total_amount).order_by(desc(stock.c.sum))
+    result = await database.fetch_one(query)
+    if result:
+        return result['sum'], float(result['present'].replace('%', ''))
+    return None, 0
+
 
 async def activate_stock():
     return await database.execute(query=stock_status.insert().values(
