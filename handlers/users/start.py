@@ -119,21 +119,23 @@ async def send_comment_handler(message: types.Message, state: FSMContext):
 
 @dp.message_handler(commands='users')
 async def users_to_programmer(message: types.Message, state: FSMContext):
-    adminga = f"😊 Barcha userlar\n\n"
-    users = await user_settings(work='GET')
-    flag = ""
+    users = _("📰 Foydalanuvchilar ro'yxati: \n\nTil \t\t | Ism Familya   | Username |\n", locale=user['lang'])
     count = 0
-    for user in users:
-        if user['lang'] == "zh":
+    for i in await user_settings(work='GET'):
+        flag = ""
+        if i['lang'] == "zh":
             flag = f"🇨🇳"
-        elif user['lang'] == "uz":
+        elif i['lang'] == "uz":
             flag = "🇺🇿"
-        elif user['lang'] == "ru":
+        elif i['lang'] == "ru":
             flag = f"🇷🇺"
         else:
             flag = f"🇺🇸"
+        full_name = i['full_name'] if len(i['full_name']) <= 10 else i['full_name'][:10] + "..."
+        username = f"<a href='tg://user?id={i['chat_id']}'>User</a>"
+        users += f"{flag} | {full_name:<12} | {username} | {i['phone_number']}\n"
         count += 1
-        adminga += f" {flag} <a href='https://tg:{user['chat_id']}'>Foydalanuvchi</a> <b>{user['phone_number']}</b>\n"
-    adminga += f"\n👥 Ja'mi: {count}"
-    await message.answer(text=adminga)
+    users += f"\n👥 Ja'mi foydalanuvchilar: "
+    users += f"<b>{count}</b>"
+    await message.answer(text=users, parse_mode='HTML')
 
