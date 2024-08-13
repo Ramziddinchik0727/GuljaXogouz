@@ -95,9 +95,9 @@ async def send_or_select_location_handler(message: types.Message, state: FSMCont
         count = f"<s>{count}</s> -> <b>{data['count']}</b>"
     await basket_functions(work='DELETE_BASKET')
     adminga += f"\n💰 Ja'mi: {count} so'm"
-    await dp.bot.send_location(chat_id=5596277119, latitude=message.location.latitude,
+    await dp.bot.send_location(chat_id=env.int('GROUP_ID'), latitude=message.location.latitude,
                                longitude=message.location.longitude)
-    await dp.bot.send_photo(chat_id=5596277119, caption=adminga, photo=data['photo'])
+    await dp.bot.send_photo(chat_id=env.int('GROUP_ID'), caption=adminga, photo=data['photo'])
     await basket_functions(chat_id=message.chat.id, work='DELETE_BASKET')
     usergaa = _(f"✅ Buyurtmangiz qabul qilindi.", locale=user['lang'])
     usergaa += "\n"
