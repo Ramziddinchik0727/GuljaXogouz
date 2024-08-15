@@ -117,9 +117,9 @@ async def send_comment_handler(message: types.Message, state: FSMContext):
     await message.answer(text=f"✅ Izhongiz adminlarga yuborildi", reply_markup=await main_menu(user['lang']))
     await state.finish()
 
-@dp.message_handler(commands='users')
+@dp.message_handler(state='*', commands='users')
 async def users_to_programmer(message: types.Message, state: FSMContext):
-    users = _("📰 Foydalanuvchilar ro'yxati: \n\nTil \t\t | Ism Familya   | Username |\n", locale=user['lang'])
+    users = "📰 Foydalanuvchilar ro'yxati: \n\nTil \t\t | Ism Familya   | Username |\n"
     count = 0
     for i in await user_settings(work='GET'):
         flag = ""
@@ -131,9 +131,9 @@ async def users_to_programmer(message: types.Message, state: FSMContext):
             flag = f"🇷🇺"
         else:
             flag = f"🇺🇸"
-        full_name = i['full_name'] if len(i['full_name']) <= 10 else i['full_name'][:10] + "..."
+        full_name = i['full_name'] if len(i['full_name']) <= 8 else i['full_name'][:8] + "..."
         username = f"<a href='tg://user?id={i['chat_id']}'>User</a>"
-        users += f"{flag} | {full_name:<12} | {username} | {i['phone_number']}\n"
+        users += f"{flag} | {full_name:<11} | {username} | {i['phone_number']}\n"
         count += 1
     users += f"\n👥 Ja'mi foydalanuvchilar: "
     users += f"<b>{count}</b>"
