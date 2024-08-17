@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-08-13 11:58+0500\n"
+"POT-Creation-Date: 2024-08-18 01:30+0500\n"
 "PO-Revision-Date: 2024-06-26 12:15+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uz\n"
@@ -23,18 +23,18 @@ msgid "😊 Savatingiz"
 msgstr ""
 
 #: handlers/users/main_buttons.py:39 handlers/users/main_buttons.py:64
-#: handlers/users/main_buttons.py:90 handlers/users/order.py:20
+#: handlers/users/main_buttons.py:90 handlers/users/order.py:21
 #: keyboards/default/users_keyboards.py:90
 msgid "🏘 Asosiy menyu"
 msgstr ""
 
 #: handlers/users/main_buttons.py:40 handlers/users/main_buttons.py:65
-#: handlers/users/order.py:21
+#: handlers/users/order.py:22
 msgid "🛒 Buyurtma berish"
 msgstr ""
 
 #: handlers/users/main_buttons.py:48 handlers/users/main_buttons.py:73
-#: handlers/users/order.py:47
+#: handlers/users/order.py:49
 msgid "💰 Ja'mi: "
 msgstr ""
 
@@ -85,29 +85,35 @@ msgstr ""
 msgid "✅ Mahsulot savatingizdan olib tashlandi."
 msgstr ""
 
-#: handlers/users/order.py:24 handlers/users/order.py:26
+#: handlers/users/order.py:25 handlers/users/order.py:27
 msgid "✅ Mahsulot savatingizdan muvaffaqqiyatli olib tashlandi."
 msgstr ""
 
-#: handlers/users/order.py:44
+#: handlers/users/order.py:33
+msgid ""
+"😕 Kechirasiz xurmatli foydalanuvchi. Bizning ish vaqtimiz 11:00 dan 23:00"
+" gacha bolganligi sababli siz hozir buyurtma bera olmaysiz!"
+msgstr ""
+
+#: handlers/users/order.py:46
 msgid "‼️ Iltimos ushbu kartaga pul o'tkazing, va to'lov chekini yuboring.‼️"
 msgstr ""
 
-#: handlers/users/order.py:59
+#: handlers/users/order.py:60
 msgid "📍 Yetkazib berish joylashuvini yuboring"
 msgstr ""
 
-#: handlers/users/order.py:101
+#: handlers/users/order.py:102
 msgid "✅ Buyurtmangiz qabul qilindi."
 msgstr ""
 
-#: handlers/users/order.py:103
+#: handlers/users/order.py:104
 msgid ""
 "😊 Hurmatli mijoz, buyurtmangiz qabul qilindi! Bizning operatorlarimiz bir"
 " necha daqiqa ichida siz bilan bog'lanadi. Hurmat bilan, Guljaxogo."
 msgstr ""
 
-#: handlers/users/order.py:104
+#: handlers/users/order.py:105
 msgid "🆔 Buyurtma raqamingiz: "
 msgstr ""
 

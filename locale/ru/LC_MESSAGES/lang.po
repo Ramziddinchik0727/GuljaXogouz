@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-08-13 11:58+0500\n"
+"POT-Creation-Date: 2024-08-18 01:30+0500\n"
 "PO-Revision-Date: 2024-06-25 17:51+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh\n"
@@ -23,18 +23,18 @@ msgid "😊 Savatingiz"
 msgstr "😊 Ваша корзина"
 
 #: handlers/users/main_buttons.py:39 handlers/users/main_buttons.py:64
-#: handlers/users/main_buttons.py:90 handlers/users/order.py:20
+#: handlers/users/main_buttons.py:90 handlers/users/order.py:21
 #: keyboards/default/users_keyboards.py:90
 msgid "🏘 Asosiy menyu"
 msgstr "🏘 Главное меню"
 
 #: handlers/users/main_buttons.py:40 handlers/users/main_buttons.py:65
-#: handlers/users/order.py:21
+#: handlers/users/order.py:22
 msgid "🛒 Buyurtma berish"
 msgstr "🛒 Сделать заказ"
 
 #: handlers/users/main_buttons.py:48 handlers/users/main_buttons.py:73
-#: handlers/users/order.py:47
+#: handlers/users/order.py:49
 msgid "💰 Ja'mi: "
 msgstr "💰 Общий: "
 
@@ -88,25 +88,33 @@ msgstr ""
 msgid "✅ Mahsulot savatingizdan olib tashlandi."
 msgstr "✅ Товар удален из корзины."
 
-#: handlers/users/order.py:24 handlers/users/order.py:26
+#: handlers/users/order.py:25 handlers/users/order.py:27
 msgid "✅ Mahsulot savatingizdan muvaffaqqiyatli olib tashlandi."
 msgstr "✅ Товар удален из корзины."
 
-#: handlers/users/order.py:44
+#: handlers/users/order.py:33
+msgid ""
+"😕 Kechirasiz xurmatli foydalanuvchi. Bizning ish vaqtimiz 11:00 dan 23:00"
+" gacha bolganligi sababli siz hozir buyurtma bera olmaysiz!"
+msgstr ""
+"😕 Извините, уважаемый пользователь. Время работы нашего сервиса с 11:00 "
+"до 23:00, поэтому вы не можете сделать заказ в данный момент!"
+
+#: handlers/users/order.py:46
 msgid "‼️ Iltimos ushbu kartaga pul o'tkazing, va to'lov chekini yuboring.‼️"
 msgstr ""
 "‼️ Пожалуйста, переведите деньги на эту карту и отправьте квитанцию о "
 "платеже.‼️"
 
-#: handlers/users/order.py:59
+#: handlers/users/order.py:60
 msgid "📍 Yetkazib berish joylashuvini yuboring"
 msgstr "📍Укажите место доставки"
 
-#: handlers/users/order.py:101
+#: handlers/users/order.py:102
 msgid "✅ Buyurtmangiz qabul qilindi."
 msgstr "✅Ваш заказ принят."
 
-#: handlers/users/order.py:103
+#: handlers/users/order.py:104
 msgid ""
 "😊 Hurmatli mijoz, buyurtmangiz qabul qilindi! Bizning operatorlarimiz bir"
 " necha daqiqa ichida siz bilan bog'lanadi. Hurmat bilan, Guljaxogo."
@@ -114,7 +122,7 @@ msgstr ""
 "😊 Уважаемый клиент, ваш заказ принят! Наши операторы свяжутся с вами в "
 "течение нескольких минут. С уважением Guljaxogo"
 
-#: handlers/users/order.py:104
+#: handlers/users/order.py:105
 msgid "🆔 Buyurtma raqamingiz: "
 msgstr "🆔Номер вашего заказа: "
 

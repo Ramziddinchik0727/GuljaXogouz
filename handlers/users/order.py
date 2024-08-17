@@ -4,6 +4,7 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
 from keyboards.default.users_keyboards import main_menu, my_locations, payment_btn, cancel
 from loader import dp, types, _
+from middlewares.check_order_time import CheckOrderTime
 from utils.db_api.database_settings import basket_functions, get_user, get_admins, menu_functions, payment_functions, \
     get_stock_status, get_best_discount
 from data.config import env
@@ -27,29 +28,28 @@ async def in_basket_handler(message: types.Message, state: FSMContext):
                                  reply_markup=await main_menu(user['lang']))
             await state.set_state('in_start')
     elif message.text[0] == "🛒":
-        count = 0
-        for food in await basket_functions(work='GET', chat_id=message.chat.id):
-            count += food['quantity'] * food['price']
-
-        # Eng mos skidkani olish
-        min_sum, discount_percent = await get_best_discount(total_amount=count)
-
-        # Skidkani hisoblash va qo'llash
-        if discount_percent > 0:
-            discount = count * (discount_percent / 100)
-            count -= discount
-        count = int(count)
-        await state.update_data({
-            'count': count
-        })
-        userga = _("‼️ Iltimos ushbu kartaga pul o'tkazing, va to'lov chekini yuboring.‼️", locale=user[4])
-        userga += f"\n💳 8600572979823346"
-        userga += f"\n👤 Umarbayev Xadjimurat\n"
-        userga += _(f"💰 Ja'mi: ", locale=user['lang'])
-        userga += str(count)
-        await message.answer(text=userga, reply_markup=await cancel(user[4]))
-        await state.set_state('send_check')
-
+        check_order_time = CheckOrderTime()
+        if not await check_order_time.check_order_time(message, user):
+            await message.answer(text=_(f"😕 Kechirasiz xurmatli foydalanuvchi. Bizning ish vaqtimiz 11:00 dan 23:00 gacha bolganligi sababli siz hozir buyurtma bera olmaysiz!", locale=user['lang']))
+        else:
+            count = 0
+            for food in await basket_functions(work='GET', chat_id=message.chat.id):
+                count += food['quantity'] * food['price']
+            min_sum, discount_percent = await get_best_discount(total_amount=count)
+            if discount_percent > 0:
+                discount = count * (discount_percent / 100)
+                count -= discount
+            count = int(count)
+            await state.update_data({
+                'count': count
+            })
+            userga = _("‼️ Iltimos ushbu kartaga pul o'tkazing, va to'lov chekini yuboring.‼️", locale=user[4])
+            userga += f"\n💳 8600572979823346"
+            userga += f"\n👤 Umarbayev Xadjimurat\n"
+            userga += _(f"💰 Ja'mi: ", locale=user['lang'])
+            userga += str(count)
+            await message.answer(text=userga, reply_markup=await cancel(user[4]))
+            await state.set_state('send_check')
 
 @dp.message_handler(state='send_check', content_types=types.ContentTypes.PHOTO)
 async def send_payment_method_handler(message: types.Message, state: FSMContext):
