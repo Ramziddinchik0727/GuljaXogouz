@@ -1,10 +1,13 @@
 from datetime import time
 from loader import types
 
+import pytz
+
 class CheckOrderTime:
     async def check_order_time(self, message: types.Message, user):
-        date = message.date
-        local_time = date.time()
+        server_time = message.date
+        tashkent_tz = pytz.timezone('Asia/Tashkent')
+        local_time = server_time.astimezone(tashkent_tz).time()
 
         start_time = time(11, 0)
         end_time = time(23, 0)
